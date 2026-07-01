@@ -1,0 +1,1987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Investor Relations | Raj Rayon Industries Limited</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = { theme: { extend: { colors: { navy: { 900: '#1E2E6E', 950: '#0F1F4B' }, cream: { 300: '#F9E2B8', 400: '#F4C359' }, brand: { navy: '#1E2E6E', sky: '#7BB8D4' } }, fontFamily: { display: ['Playfair Display','serif'], body: ['Inter','sans-serif'] } } } }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #F4F7FB; color: #1F2937; }
+    .hero-bg { background: radial-gradient(circle at top left, rgba(123,184,212,0.2), transparent 35%), radial-gradient(circle at bottom right, rgba(30,46,110,0.22), transparent 25%); }
+    .investor-card { border: 1px solid rgba(30,46,110,0.08); }
+    section{padding:52px 48px 60px;}
+.section-head{
+  display:flex;align-items:center;gap:16px;
+  margin-bottom:44px;
+}
+.section-head h2{
+  font-family:'Playfair Display',serif;
+  font-size:24px;font-weight:700;
+  color:#1B2A6B;white-space:nowrap;
+}
+.section-head::after{content:'';flex:1;height:1px;background:#CBD5E1;}
+.tag{
+  font-size:10px;font-weight:600;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:#1B2A6B;background:#DDEEFF;
+  padding:4px 10px;border-radius:4px;
+}
+ 
+/* ── GRID ── */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:28px;
+}
+ 
+/* ── CARD ── */
+.card{
+  background:#fff;
+  border:1px solid #DDE6F0;
+  border-radius:20px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow:0 2px 12px rgba(27,42,107,0.06);
+}
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 40px rgba(27,42,107,0.14);
+}
+.card.open{
+  box-shadow:0 12px 40px rgba(27,42,107,0.14);
+}
+ 
+/* ── CARD TOP ── */
+.card-top{
+  padding:32px 24px 24px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:0;
+}
+ 
+/* ── CIRCLE PHOTO ── */
+/* Make investor avatar images smaller and circular (half size) */
+.card-top img{
+  width:72px;
+  height:72px;
+  object-fit:cover;
+  border-radius:50%;
+  display:block;
+  margin:0 auto 12px;
+}
+
+ :root {
+      --navy:      #1B2A6B;
+      --navy-dark: #0F1D54;
+      --sky:       #7BB8D4;
+      --sky-light: #D6EAF3;
+      --bg:        #F4F7FB;
+      --white:     #ffffff;
+      --text:      #1F2937;
+      --muted:     #64748B;
+      --border:    #DDE6F0;
+      --pdf-red:   #E53E3E;
+      --radius-xl: 28px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+ 
+    .doc-section { max-width: 1100px; margin: 0 auto; padding: 64px 24px 80px; }
+ 
+    .doc-section__header { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 48px; }
+    .doc-section__eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(123,184,212,0.15); color: var(--navy); font-size: 11px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; }
+    .doc-section__eyebrow svg { width: 14px; height: 14px; stroke: var(--navy); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .doc-section__title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 36px); font-weight: 700; color: var(--navy); line-height: 1.2; }
+    .doc-section__subtitle { font-size: 15px; color: var(--muted); max-width: 560px; line-height: 1.65; }
+ 
+    .accordion-grid { display: grid; gap: 14px; }
+ 
+    .acc-item { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius-xl); overflow: hidden; transition: box-shadow 0.3s ease, border-color 0.3s ease; }
+    .acc-item:hover { border-color: var(--sky); box-shadow: 0 4px 24px rgba(27,42,107,0.08); }
+    .acc-item.is-open { border-color: var(--navy); box-shadow: 0 8px 40px rgba(27,42,107,0.13); }
+ 
+    .acc-trigger { width: 100%; background: none; border: none; cursor: pointer; padding: 22px 26px; display: flex; align-items: center; gap: 16px; text-align: left; }
+ 
+    .acc-icon { width: 46px; height: 46px; border-radius: 13px; background: var(--sky-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.25s; }
+    .acc-item.is-open .acc-icon { background: var(--navy); }
+    .acc-icon svg { width: 21px; height: 21px; stroke: var(--navy); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.25s; }
+    .acc-item.is-open .acc-icon svg { stroke: #fff; }
+ 
+    .acc-text { flex: 1; min-width: 0; }
+    .acc-text__title { font-family: 'Playfair Display', serif; font-size: 16.5px; font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: 2px; }
+    .acc-text__meta { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+ 
+    .acc-count { background: var(--bg); color: var(--navy); font-size: 11px; font-weight: 600; padding: 4px 11px; border-radius: 100px; border: 1px solid var(--border); white-space: nowrap; transition: background 0.25s, color 0.25s, border-color 0.25s; }
+    .acc-item.is-open .acc-count { background: var(--sky-light); border-color: var(--sky); }
+ 
+    .acc-chevron { width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--navy); transition: background 0.25s, border-color 0.25s; }
+    .acc-chevron svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); }
+    .acc-item.is-open .acc-chevron { background: var(--navy); border-color: var(--navy); color: #fff; }
+    .acc-item.is-open .acc-chevron svg { transform: rotate(180deg); }
+ 
+    .acc-panel { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); }
+    .acc-item.is-open .acc-panel { max-height: 3000px; }
+    .acc-panel__inner { padding: 0 26px 26px; border-top: 1px solid var(--border); }
+ 
+    .file-group { margin-top: 20px; }
+    .file-group__label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; padding-left: 2px; }
+ 
+    .file-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)); gap: 9px; list-style: none; }
+ 
+    .file-pill { display: flex; align-items: center; gap: 11px; padding: 12px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 13px; text-decoration: none; color: var(--text); font-size: 13px; font-weight: 500; transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.15s; line-height: 1.4; }
+    .file-pill:hover { background: var(--white); border-color: var(--sky); box-shadow: 0 3px 14px rgba(27,42,107,0.10); transform: translateY(-1px); color: var(--navy); }
+    .file-pill:active { transform: translateY(0); }
+ 
+    .file-pill__icon { width: 30px; height: 30px; border-radius: 7px; background: #FEF2F2; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .file-pill__icon svg { width: 15px; height: 15px; stroke: var(--pdf-red); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .file-pill__name { flex: 1; }
+ 
+    .file-pill__dl { width: 20px; height: 20px; border-radius: 50%; background: var(--sky-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; opacity: 0; transition: opacity 0.2s; }
+    .file-pill:hover .file-pill__dl { opacity: 1; }
+    .file-pill__dl svg { width: 10px; height: 10px; stroke: var(--navy); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+ 
+    .group-divider { border: none; border-top: 1px dashed var(--border); margin: 20px 0 0; }
+ 
+    @media (max-width: 640px) {
+      .doc-section { padding: 40px 16px 60px; }
+      .acc-trigger { padding: 16px 18px; gap: 12px; }
+      .acc-panel__inner { padding: 0 18px 22px; }
+      .acc-count { display: none; }
+      .acc-text__meta { display: none; }
+      .file-list { grid-template-columns: 1fr; }
+    }
+    /*:root {
+      --navy:      #1B2A6B;
+      --navy-dark: #0F1D54;
+      --sky:       #7BB8D4;
+      --sky-light: #D6EAF3;
+      --bg:        #F4F7FB;
+      --white:     #ffffff;
+      --text:      #1F2937;
+      --muted:     #64748B;
+      --border:    #DDE6F0;
+      --pdf-red:   #E53E3E;
+      --radius-xl: 28px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); }
+
+    .doc-section { max-width: 1100px; margin: 0 auto; padding: 64px 24px 80px; }
+
+    .doc-section__header { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 48px; }
+    .doc-section__eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(123,184,212,0.15); color: var(--navy); font-size: 11px; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; }
+    .doc-section__eyebrow svg { width: 14px; height: 14px; stroke: var(--navy); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .doc-section__title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 4vw, 36px); font-weight: 700; color: var(--navy); line-height: 1.2; }
+    .doc-section__subtitle { font-size: 15px; color: var(--muted); max-width: 560px; line-height: 1.65; }
+
+    .accordion-grid { display: grid; gap: 14px; }
+
+    .acc-item { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius-xl); overflow: hidden; transition: box-shadow 0.3s ease, border-color 0.3s ease; }
+    .acc-item:hover { border-color: var(--sky); box-shadow: 0 4px 24px rgba(27,42,107,0.08); }
+    .acc-item.is-open { border-color: var(--navy); box-shadow: 0 8px 40px rgba(27,42,107,0.13); }
+
+    .acc-trigger { width: 100%; background: none; border: none; cursor: pointer; padding: 22px 26px; display: flex; align-items: center; gap: 16px; text-align: left; }
+
+    .acc-icon { width: 46px; height: 46px; border-radius: 13px; background: var(--sky-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.25s; }
+    .acc-item.is-open .acc-icon { background: var(--navy); }
+    .acc-icon svg { width: 21px; height: 21px; stroke: var(--navy); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.25s; }
+    .acc-item.is-open .acc-icon svg { stroke: #fff; }
+
+    .acc-text { flex: 1; min-width: 0; }
+    .acc-text__title { font-family: 'Playfair Display', serif; font-size: 16.5px; font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: 2px; }
+    .acc-text__meta { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    .acc-count { background: var(--bg); color: var(--navy); font-size: 11px; font-weight: 600; padding: 4px 11px; border-radius: 100px; border: 1px solid var(--border); white-space: nowrap; transition: background 0.25s, color 0.25s, border-color 0.25s; }
+    .acc-item.is-open .acc-count { background: var(--sky-light); border-color: var(--sky); }
+
+    .acc-chevron { width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--navy); transition: background 0.25s, border-color 0.25s; }
+    .acc-chevron svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); }
+    .acc-item.is-open .acc-chevron { background: var(--navy); border-color: var(--navy); color: #fff; }
+    .acc-item.is-open .acc-chevron svg { transform: rotate(180deg); }
+
+    .acc-panel { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); }
+    .acc-item.is-open .acc-panel { max-height: 3000px; }
+    .acc-panel__inner { padding: 0 26px 26px; border-top: 1px solid var(--border); }
+
+    .file-group { margin-top: 20px; }
+    .file-group__label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; padding-left: 2px; }
+
+    .file-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(255px, 1fr)); gap: 9px; list-style: none; }
+
+    .file-pill { display: flex; align-items: center; gap: 11px; padding: 12px 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 13px; text-decoration: none; color: var(--text); font-size: 13px; font-weight: 500; transition: background 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.15s; line-height: 1.4; }
+    .file-pill:hover { background: var(--white); border-color: var(--sky); box-shadow: 0 3px 14px rgba(27,42,107,0.10); transform: translateY(-1px); color: var(--navy); }
+    .file-pill:active { transform: translateY(0); }
+
+    .file-pill__icon { width: 30px; height: 30px; border-radius: 7px; background: #FEF2F2; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .file-pill__icon svg { width: 15px; height: 15px; stroke: var(--pdf-red); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .file-pill__name { flex: 1; }
+
+    .file-pill__dl { width: 20px; height: 20px; border-radius: 50%; background: var(--sky-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; opacity: 0; transition: opacity 0.2s; }
+    .file-pill:hover .file-pill__dl { opacity: 1; }
+    .file-pill__dl svg { width: 10px; height: 10px; stroke: var(--navy); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+    .group-divider { border: none; border-top: 1px dashed var(--border); margin: 20px 0 0; }
+
+    @media (max-width: 640px) {
+      .doc-section { padding: 40px 16px 60px; }
+      .acc-trigger { padding: 16px 18px; gap: 12px; }
+      .acc-panel__inner { padding: 0 18px 22px; }
+      .acc-count { display: none; }
+      .acc-text__meta { display: none; }
+      .file-list { grid-template-columns: 1fr; }
+    }*/
+  
+
+ 
+/* ── NAME & ROLE ── */
+.card-top h3{
+  font-family:'Playfair Display',serif;
+  font-size:16px;font-weight:700;
+  color:#1B2A6B;line-height:1.35;
+  margin-bottom:7px;
+}
+.role{
+  font-size:12px;font-weight:500;
+  color:#64748B;line-height:1.4;
+}
+.divider{
+  width:36px;height:3px;
+  background:#1B2A6B;
+  border-radius:2px;
+  margin:16px auto 18px;
+}
+ 
+/* ── TOGGLE BUTTON ── */
+.btn-toggle{
+  width:34px;height:34px;
+  border-radius:50%;
+  border:1.5px solid #DDE6F0;
+  background:transparent;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;
+  transition:background 0.25s,border-color 0.25s,transform 0.35s;
+  color:#1B2A6B;
+}
+.btn-toggle svg{
+  width:15px;height:15px;
+  transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+.card.open .btn-toggle{
+  background:#1B2A6B;
+  border-color:#1B2A6B;
+  color:#fff;
+}
+.card.open .btn-toggle svg{transform:rotate(180deg);}
+ 
+/* ── DROPDOWN ── */
+.card-drop{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height 0.42s cubic-bezier(0.4,0,0.2,1);
+  border-top:0px solid #EDF2F7;
+}
+.card.open .card-drop{
+  max-height:400px;
+  border-top:1px solid #EDF2F7;
+}
+.card-drop ul{
+  list-style:none;
+  padding:18px 24px 24px;
+  display:flex;flex-direction:column;gap:0;
+}
+.card-drop li{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:11px 0;
+  border-bottom:1px solid #F1F5F9;
+  font-size:13.5px;color:#475569;
+  line-height:1.6;
+}
+.card-drop li:last-child{border-bottom:none;padding-bottom:0;}
+.card-drop li::before{
+  content:'';
+  width:6px;height:6px;
+  border-radius:50%;
+  background:#1B2A6B;
+  flex-shrink:0;margin-top:7px;
+}
+ 
+.footer{
+  text-align:center;padding:20px 48px 36px;
+  font-size:12px;color:#94A3B8;
+}
+ 
+@media(max-width:600px){
+  .header{padding:36px 20px 32px;}
+  .section{padding:36px 20px 48px;}
+  .footer{padding:16px 20px 28px;}
+}
+  </style>
+</head>
+<body>
+  <nav id="navbar" class="site-nav fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-white border-b border-[#1E2E6E]/8 shadow-sm shadow-[#1E2E6E]/8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="home_.html" class="flex items-center gap-3 -ml-3 sm:-ml-6 lg:-ml-8">
+          <div class="w-100 h-100 rounded-xl bg-white flex items-center justify-center overflow-hidden">
+            <img src="videos/raj_rayon_logo_transparent.png" alt="Brand logo" class="w-full h-full object-contain" />
+          </div>
+        </a>
+        <div class="hidden lg:flex items-center gap-1">
+          <a href="home_.html" class="nav-link px-4 py-2 text-sm text-[#1E2E6E] hover:text-[#7BB8D4] rounded-lg">Home</a>
+          <a href="infrastructure_.html" class="nav-link px-4 py-2 text-sm text-[#1E2E6E] hover:text-[#7BB8D4] rounded-lg">Infrastructure</a>
+          <a href="products_.html" class="nav-link px-4 py-2 text-sm text-[#1E2E6E] hover:text-[#7BB8D4] rounded-lg">Products</a>
+          <a href="investor.html" class="nav-link px-4 py-2 text-sm text-[#7BB8D4] font-semibold rounded-lg bg-[#D6EAF3]">Investor Relations</a>
+          <a href="career.html" class="nav-link px-4 py-2 text-sm text-[#1E2E6E] hover:text-[#7BB8D4] rounded-lg">Careers</a>
+          <a href="contact.html" class="ml-4 px-5 py-2.5 bg-[#1E2E6E] text-white text-sm font-semibold rounded-lg">Contact Us</a>
+          <a href="https://www.svgfashions.com/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 ml-3 hover:bg-white/10 transition-all duration-300">
+            <img src="videos/SVG LOGO BMP.bmp" alt="SVG Logo" class="h-16 w-auto object-contain" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-28 pb-16">
+    <section class="hero-bg relative overflow-hidden py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#7BB8D4]/15 text-sm font-semibold uppercase tracking-[0.3em] text-[#1E2E6E]">Investor Relations</span>
+            <h1 class="mt-6 text-4xl sm:text-5xl font-bold text-[#1E2E6E] max-w-2xl leading-tight">Transparent governance & investor-friendly disclosures for long-term trust.</h1>
+            <p class="mt-6 text-[#4B5563] text-lg leading-relaxed max-w-2xl">Raj Rayon Industries Limited welcomes investors to explore our financial profile, shareholder engagement, corporate governance, and investor community. Our aim is to keep the markets informed with clarity and consistency.</p>
+            <div class="mt-10 grid sm:grid-cols-2 gap-4">
+              <div class="rounded-3xl border border-[#D6EAF3] bg-white p-6 shadow-sm">
+                <p class="text-sm uppercase tracking-[0.24em] text-[#7BB8D4] mb-2">Listed On</p>
+                <p class="text-xl font-semibold text-[#1E2E6E]">BSE & NSE</p>
+              </div>
+              <div class="rounded-3xl border border-[#D6EAF3] bg-white p-6 shadow-sm">
+                <p class="text-sm uppercase tracking-[0.24em] text-[#7BB8D4] mb-2">Annual Capacity</p>
+                <p class="text-xl font-semibold text-[#1E2E6E]">70,000 TPA</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-[36px] overflow-hidden shadow-2xl border border-white/80 bg-white">
+            <img src="https://www.rajrayon.com/images/home-111.jpg" alt="Investor Relations" class="w-full h-[520px] object-cover" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+      <div class="grid lg:grid-cols-5 gap-8 items-start">
+        <div class="lg:col-span-3">
+          <div class="rounded-3xl bg-white p-10 shadow-xl border border-[#E5E7EB]/80">
+            <h2 class="text-3xl font-semibold text-[#1E2E6E] mb-6">Our Investor Community</h2>
+            <p class="text-[#4B5563] leading-relaxed mb-6">We support our investors with strong disclosure practices, proactive communication and a transparent governance framework. The investor relations page is designed to highlight the strength of our listed company profile and the community behind it.</p>
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div class="rounded-3xl border border-[#D6EAF3] bg-[#F8FAFC] p-6">
+                <p class="text-sm uppercase tracking-[0.2em] text-[#7BB8D4] mb-3">Stable Returns</p>
+                <p class="text-[#334155]">A consistent approach to long-term value creation with regular reporting and disciplined operations.</p>
+              </div>
+              <div class="rounded-3xl border border-[#D6EAF3] bg-[#F8FAFC] p-6">
+                <p class="text-sm uppercase tracking-[0.2em] text-[#7BB8D4] mb-3">Open Communication</p>
+                <p class="text-[#334155]">Easy access to corporate reports, market updates, and investor support information.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="lg:col-span-2 space-y-6">
+          <div class="rounded-3xl bg-[#1E2E6E] p-8 text-white shadow-xl">
+            <span class="text-sm uppercase tracking-[0.24em] text-[#7BB8D4]">Quick Facts</span>
+            <div class="mt-6 space-y-5 text-sm text-white/80">
+              <div>
+                <h3 class="text-xl font-semibold text-white">BSE/NSE Listing</h3>
+                <p>Dual market listing strengthens liquidity and investor visibility.</p>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-white">Governance Focus</h3>
+                <p>Policy-led disclosure, board oversight, and audit transparency.</p>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-white">Shareholder Access</h3>
+                <p>Investor contacts, reports, and equity updates available on request.</p>
+              </div>
+            </div>
+          </div>
+          <div class="rounded-3xl border border-[#D6EAF3] bg-white p-8 shadow-sm">
+            <h3 class="text-xl font-semibold text-[#1E2E6E] mb-4">Connect with Investor Relations</h3>
+            <p class="text-[#4B5563] mb-6">For queries on financial results, governance disclosures or shareholder information, our team is available to assist.</p>
+            <a href="contact.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#1E2E6E] text-white font-semibold hover:bg-[#17274f] transition">Contact Investor Relations</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-5">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+        <div>
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#7BB8D4]/15 text-sm font-semibold uppercase tracking-[0.3em] text-[#1E2E6E]">Board Of Directors</span>
+          <h2 class="mt-4 text-3xl font-semibold text-[#1E2E6E]">Representatives of Raj Rayon Industries Limited </h2>
+          <p class="mt-3 text-[#4B5563] max-w-2xl">Experienced leaders steering Raj Rayon's vision and growth across the Indian textile industry.</p>
+        </div>
+       
+      </div>
+
+
+
+
+ 
+
+ 
+<section class="section">
+  <div class="section-head">
+    <span class="tag">Leadership</span>
+    <h2>Board Members</h2>
+  </div>
+  <div class="grid">
+    
+      <div class="card" onclick="toggle(this)">
+        <div class="card-top">
+          <div class="avatar-ring">
+            <img src="Z:\dhwani rril\RRIL INDUSTRIES LIMITED - 123\RRIL INDUSTRIES LIMITED - Copy\rajkumar.png">
+          </div>
+           <h3>Mr. Rajkumar Satyanarayan Agarwal</h3>
+          <span class="role">Chairman</span>
+          <div class="divider"></div>
+          <button class="btn-toggle" aria-label="Show details">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+        <div class="card-drop">
+          <ul><li>41+ years of experience in the textile industry</li><li>Holds B.Com from Sydenham College of Commerce and Economics</li><li>Managing Director of SVG Fashion since 1984</li></ul>
+        </div>
+      </div>
+      <div class="card" onclick="toggle(this)">
+        <div class="card-top">
+          <div class="avatar-ring">
+            <img src="Z:\dhwani rril\RRIL INDUSTRIES LIMITED - 123\RRIL INDUSTRIES LIMITED - Copy\sandiip.png">
+          </div>
+          <h3>Mr. Sandip Satyanarayan Agarwal</h3>
+          <span class="role">Executive Director &amp; CEO</span>
+          <div class="divider"></div>
+          <button class="btn-toggle" aria-label="Show details">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+        <div class="card-drop">
+          <ul><li>31+ years of experience in the textile industry</li><li>Holds MBA in Finance from NMIMS</li><li>Serves as Director of SVG Fashions since 1994</li></ul>
+        </div>
+      </div>
+      <div class="card" onclick="toggle(this)">
+        <div class="card-top">
+          <div class="avatar-ring">
+            <img src="Z:\dhwani rril\RRIL INDUSTRIES LIMITED - 123\RRIL INDUSTRIES LIMITED - Copy\sapna.png">
+            </div>
+          <h3>Ms. Sapna Rajkumar Agarwal</h3>
+          <span class="role">Non-Executive, Independent Director</span>
+          <div class="divider"></div>
+          <button class="btn-toggle" aria-label="Show details">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+        <div class="card-drop">
+          <ul><li>Holds B.Com from NM College</li><li>Results-driven professional with a strong focus on operational excellence</li></ul>
+        </div>
+      </div>
+      <div class="card" onclick="toggle(this)">
+        <div class="card-top">
+          <div class="avatar-ring">
+            <img src="Z:\dhwani rril\RRIL INDUSTRIES LIMITED - 123\RRIL INDUSTRIES LIMITED - Copy\supriya.png">
+            </div>
+          <h3>Ms. Supriya Mahesh Pujari</h3>
+          <span class="role">Non-Executive, Independent Director</span>
+          <div class="divider"></div>
+          <button class="btn-toggle" aria-label="Show details">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+        <div class="card-drop">
+          <ul><li>17+ years of experience in treasury and financial management</li><li>Holds PG in Finance from NMIMS</li><li>Serves as Director across multiple companies</li></ul>
+        </div>
+      </div>
+      <div class="card" onclick="toggle(this)">
+        <div class="card-top">
+          <div >
+            <img src="Z:\dhwani rril\RRIL INDUSTRIES LIMITED - 123\RRIL INDUSTRIES LIMITED - Copy\vinod.png">
+          </div>
+          <h3>Mr. Vinodkumar Bajranglal Dalmia</h3>
+          <span class="role">Non-Executive, Independent Director</span>
+          <div class="divider"></div>
+          <button class="btn-toggle" aria-label="Show details">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+        <div class="card-drop">
+          <ul><li>50+ years of entrepreneurial experience in manufacturing and distribution</li><li>Commerce graduate and MBA with extensive domestic and international industry network</li></ul>
+        </div>
+      </div>
+      <div class="card" onclick="toggle(this)">
+        <div class="card-top">
+          <div class="avatar-ring">
+            <img src="Z:\dhwani rril\RRIL INDUSTRIES LIMITED - 123\RRIL INDUSTRIES LIMITED - Copy\kailashnath.png">
+          </div>
+          <h3>Mr. Kailashnath Jeevan Koppikar</h3>
+          <span class="role">Non-Executive, Independent Director</span>
+          <div class="divider"></div>
+          <button class="btn-toggle" aria-label="Show details">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+        </div>
+        <div class="card-drop">
+          <ul><li>30+ years of leadership experience across multiple sectors</li><li>Holds PGDBA in Finance from NMIMS</li><li>Held senior leadership roles across multiple organisations</li></ul>
+        </div>
+      </div>
+  </div>
+</section>
+<script>
+function toggle(card){
+  var wasOpen = card.classList.contains('open');
+  document.querySelectorAll('.card.open').forEach(function(c){ c.classList.remove('open'); });
+  if(!wasOpen) card.classList.add('open');
+}
+</script>
+<!-- Board Committees -->
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- Audit Committee -->
+              <div class="border border-[#D6EAF3] rounded-2xl p-6 bg-[#F8FAFC]">
+                <h5 class="font-semibold text-[#1E2E6E] mb-4">I. Audit Committee</h5>
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Kailashnath Jeevan Koppikar</span>
+                    <span class="font-semibold text-[#7BB8D4]">Chairman</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Vinodkumar Bajranglal Dalmia</span>
+                    <span class="font-semibold text-[#7BB8D4]">Member</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Ms. Sapna Rajkumar Agarwal</span>
+                    <span class="font-semibold text-[#7BB8D4]">Member</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Nomination & Remuneration Committee -->
+              <div class="border border-[#D6EAF3] rounded-2xl p-6 bg-[#F8FAFC]">
+                <h5 class="font-semibold text-[#1E2E6E] mb-4">II. Nomination & Remuneration Committee</h5>
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Vinodkumar Bajranglal Dalmia</span>
+                    <span class="font-semibold text-[#7BB8D4]">Chairman</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Kailashnath Jeevan Koppikar</span>
+                    <span class="font-semibold text-[#7BB8D4]">Member</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Ms. Sapna Rajkumar Agarwal</span>
+                    <span class="font-semibold text-[#7BB8D4]">Member</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Stakeholders' Relationship Committee -->
+              <div class="border border-[#D6EAF3] rounded-2xl p-6 bg-[#F8FAFC]">
+                <h5 class="font-semibold text-[#1E2E6E] mb-4">III. Stakeholders' Relationship Committee</h5>
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Vinodkumar Bajranglal Dalmia</span>
+                    <span class="font-semibold text-[#7BB8D4]">Chairman</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Kailashnath Jeevan Koppikar</span>
+                    <span class="font-semibold text-[#7BB8D4]">Member</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Ms. Sapna Rajkumar Agarwal</span>
+                    <span class="font-semibold text-[#7BB8D4]">Member</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Risk Management Committee -->
+              <div class="border border-[#D6EAF3] rounded-2xl p-6 bg-[#F8FAFC]">
+                <h5 class="font-semibold text-[#1E2E6E] mb-4">IV. Risk Management Committee</h5>
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Sandiip Satyanarayan Agarwal</span>
+                    <span class="font-semibold text-[#7BB8D4]">Chairman</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Vinodkumar Bajranglal Dalmia</span>
+                    <span class="font-semibold text-[#7BB8D4]">Member</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Kailashnath Jeevan Koppikar</span>
+                    <span class="font-semibold text-[#7BB8D4]">Member</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+      <!--<div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
+        <article class="rounded-3xl bg-white p-6 border border-[#E5E7EB] shadow-sm investor-card">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" alt="Investor portrait" class="w-full h-72 object-cover rounded-3xl mb-6">
+          <h3 class="text-xl font-semibold text-[#1E2E6E]">Priya Sharma</h3>
+          <p class="text-sm text-[#64748B]">Institutional Investor</p>
+        </article>
+        <article class="rounded-3xl bg-white p-6 border border-[#E5E7EB] shadow-sm investor-card">
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80" alt="Investor portrait" class="w-full h-72 object-cover rounded-3xl mb-6">
+          <h3 class="text-xl font-semibold text-[#1E2E6E]">Rohit Verma</h3>
+          <p class="text-sm text-[#64748B]">Equity Analyst</p>
+        </article>
+        <article class="rounded-3xl bg-white p-6 border border-[#E5E7EB] shadow-sm investor-card">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80" alt="Investor portrait" class="w-full h-72 object-cover rounded-3xl mb-6">
+          <h3 class="text-xl font-semibold text-[#1E2E6E]">Ayesha Khan</h3>
+          <p class="text-sm text-[#64748B]">Portfolio Manager</p>
+        </article>
+        <article class="rounded-3xl bg-white p-6 border border-[#E5E7EB] shadow-sm investor-card">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Investor portrait" class="w-full h-72 object-cover rounded-3xl mb-6">
+          <h3 class="text-xl font-semibold text-[#1E2E6E]">Suresh Patel</h3>
+          <p class="text-sm text-[#64748B]">Investment Partner</p>
+        </article>
+        <article class="rounded-3xl bg-white p-6 border border-[#E5E7EB] shadow-sm investor-card">
+          <img src="https://images.unsplash.com/photo-1542204165-1708dced74f3?auto=format&fit=crop&w=800&q=80" alt="Investor portrait" class="w-full h-72 object-cover rounded-3xl mb-6">
+          <h3 class="text-xl font-semibold text-[#1E2E6E]">Karan Singh</h3>
+          <p class="text-sm text-[#64748B]">Strategic Investor</p>
+        </article>
+        <article class="rounded-3xl bg-white p-6 border border-[#E5E7EB] shadow-sm investor-card">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80" alt="Investor portrait" class="w-full h-72 object-cover rounded-3xl mb-6">
+          <h3 class="text-xl font-semibold text-[#1E2E6E]">Neha Joshi</h3>
+          <p class="text-sm text-[#64748B]">Board Advisor</p>
+        </article>
+      </div>
+    </section>-->
+
+<section id="investor-downloads" class="doc-section">
+  <div class="doc-section__header">
+    <span class="doc-section__eyebrow">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+      Investor Documents
+    </span>
+    <h2 class="doc-section__title">Regulatory Filings &amp; Disclosures</h2>
+    <p class="doc-section__subtitle">All statutory filings, governance policies, and financial reports — organised by category. Click any section to browse and download documents.</p>
+  </div>
+ 
+  <div class="accordion-grid" id="docAccordion">
+ 
+    <!-- Annual Reports -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+        <span class="acc-text">
+          <span class="acc-text__title">Annual Reports</span>
+          <span class="acc-text__meta">Audited financials &amp; management commentary — FY2012 to FY2025</span>
+        </span>
+        <span class="acc-count">14 documents</span>
+        <span class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel__inner">
+          <div class="file-group">
+            <p class="file-group__label">Recent Years</p>
+            <ul class="file-list">
+            <li><a href="assets/investor/annual-reports/Annual_Report_2025.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Report 2025</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/annual-reports/Annual_Report_2024.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Report 2024</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/annual-reports/Annual_Report_2023.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Report 2023</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/annual-reports/Annual_Report_2022.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Report 2020–22</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/annual-reports/Annual_Report_2021.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Report 2021</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/annual-reports/Annual_Report_2020.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Report 2020</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            </ul>
+          </div>
+          <hr class="group-divider">
+ 
+          <div class="file-group">
+            <p class="file-group__label">Earlier Years</p>
+            <ul class="file-list">
+            <li><a href="assets/investor/annual-reports/Annual_Report_2019.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Report 2019</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/annual-reports/Annual_Report_2018.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Report 2018</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/annual-reports/Annual_Report_2017.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Report 2017</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/annual-reports/Annual_Report_2016.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Report 2016</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/annual-reports/Annual_Report_2015.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Report 2015</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/annual-reports/Annual_Report_2014.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Report 2014</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/annual-reports/Annual_Report_2013.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Report 2013</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/annual-reports/Annual_Report_2012.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Report 2012</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- AGM &amp; EGM Notices -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+        <span class="acc-text">
+          <span class="acc-text__title">AGM &amp; EGM Notices</span>
+          <span class="acc-text__meta">Annual &amp; Extraordinary General Meeting notices</span>
+        </span>
+        <span class="acc-count">7 documents</span>
+        <span class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel__inner">
+          <div class="file-group">
+            <p class="file-group__label">AGM Notices</p>
+            <ul class="file-list">
+            <li><a href="assets/investor/agm-notices/Notice_of_32nd_Annual_General_Meeting.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">32nd AGM Notice</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/agm-notices/Notice_of_31st_Annual_General_Meeting.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">31st AGM Notice</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/agm-notices/30th_Annual_General_Meeting.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">30th AGM Notice</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/agm-notices/29th_Annual_General_Meeting.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">29th AGM Notice (in Annual Report)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/agm-notices/Website_Postal_Ballot_Notice.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Postal Ballot Notice</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            </ul>
+          </div>
+          <hr class="group-divider">
+ 
+          <div class="file-group">
+            <p class="file-group__label">EGM Notices</p>
+            <ul class="file-list">
+            <li><a href="assets/investor/agm-notices/EGM_Notice_14.03.2015.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">EGM Notice — 14.03.2015</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/agm-notices/EGM_Notice_17.01.2016.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">EGM Notice — 17.01.2016</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Shareholding Pattern -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></span>
+        <span class="acc-text">
+          <span class="acc-text__title">Shareholding Pattern</span>
+          <span class="acc-text__meta">Quarterly promoter, institutional &amp; retail holding data</span>
+        </span>
+        <span class="acc-count">4 documents</span>
+        <span class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel__inner">
+          <div class="file-group">
+            <p class="file-group__label">FY 2025–26</p>
+            <ul class="file-list">
+            <li><a href="assets/investor/shareholding-pattern/SHP_31.03.2026.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">SHP — Q4 FY26 (31.03.2026)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/shareholding-pattern/SHP_31.12.2025.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">SHP — Q3 FY26 (31.12.2025)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/shareholding-pattern/SHP_30.09.2025.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">SHP — Q2 FY26 (30.09.2025)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/shareholding-pattern/SHP_30-06-2025.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">SHP — Q1 FY26 (30.06.2025)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Corporate Governance -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+        <span class="acc-text">
+          <span class="acc-text__title">Corporate Governance</span>
+          <span class="acc-text__meta">Policies, charters, governance reports &amp; compliance filings</span>
+        </span>
+        <span class="acc-count">15 documents</span>
+        <span class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel__inner">
+          <div class="file-group">
+            <p class="file-group__label">Policies &amp; Codes</p>
+            <ul class="file-list">
+            <li><a href="assets/investor/corporate-governance/Code-of-Practices-and-Procedures-for-Fair-Disclosure-of-UPSI-Reg-8.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Fair Disclosure of UPSI (Reg. 8)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/corporate-governance/Code_of_Internal_Procedures_Reg9_PIT.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Code for Trading by Insiders (Reg. 9 PIT)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/corporate-governance/Code-of-conduct-for-board-of-directors.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Code of Conduct — Board of Directors</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/corporate-governance/Documents-Preservation-and-Archival-Policy.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Document Preservation &amp; Archival Policy</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/corporate-governance/Nomination_and_Remuneration_Policy.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Nomination &amp; Remuneration Policy</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/corporate-governance/Policy_Related_Party_Transaction.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Related Party Transaction Policy</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/corporate-governance/Policy-for-determination-of-materiality-of-any-event-information.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Materiality Determination Policy</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/corporate-governance/Sexual_Harassment_Policy.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Sexual Harassment Policy (POSH)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/corporate-governance/Whistle-Blower-Policy.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Whistle Blower Policy</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            </ul>
+          </div>
+          <hr class="group-divider">
+ 
+          <div class="file-group">
+            <p class="file-group__label">Independent Directors</p>
+            <ul class="file-list">
+            <li><a href="assets/investor/corporate-governance/Familiarisation-programes-for-independent-directors.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Familiarisation Programme for Independent Directors</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/corporate-governance/Letter-of-Appointment-of-Independent-Director.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Letter of Appointment — Independent Director</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            </ul>
+          </div>
+          <hr class="group-divider">
+ 
+          <div class="file-group">
+            <p class="file-group__label">Integrated Governance Reports</p>
+            <ul class="file-list">
+            <li><a href="assets/investor/corporate-governance/Integrated_Governance_31.03.2026.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Governance Report — Q4 FY26 (31.03.2026)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/corporate-governance/Integrated_Governance_31.12.2025.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Governance Report — Q3 FY26 (31.12.2025)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/corporate-governance/Integrated_Governance_30.09.2025.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Governance Report — Q2 FY26 (30.09.2025)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/corporate-governance/Integrated_Governance_30.06.2025.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Governance Report — Q1 FY26 (30.06.2025)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Dividend Policy -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
+        <span class="acc-text">
+          <span class="acc-text__title">Dividend Policy</span>
+          <span class="acc-text__meta">Capital allocation &amp; shareholder distribution framework</span>
+        </span>
+        <span class="acc-count">1 document</span>
+        <span class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel__inner">
+          <ul class="file-list">
+            <li><a href="assets/investor/dividend-policy/Dividend-Distribution-Policy.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Dividend Distribution Policy</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Dividend Policy -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-icon"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
+        <span class="acc-text">
+          <span class="acc-text__title">Investor Information</span>
+          <span class="acc-text__meta">Capital allocation &amp; shareholder distribution framework</span>
+        </span>
+        <span class="acc-count">1 document</span>
+        <span class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel__inner">
+          <ul class="file-list">
+            <li><a href="assets/investor/dividend-policy/Dividend-Distribution-Policy.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">ABOUT INVESTORS</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- Annual Return (MGT-7) -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+        <span class="acc-text">
+          <span class="acc-text__title">Annual Return (MGT-7)</span>
+          <span class="acc-text__meta">Statutory annual returns filed with the Registrar of Companies</span>
+        </span>
+        <span class="acc-count">5 documents</span>
+        <span class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel__inner">
+          <ul class="file-list">
+            <li><a href="assets/investor/annual-return/E-Form_MGT_7_2025_.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Return MGT-7 — FY 2025</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/annual-return/E-Form_MGT_7_2024_.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Return MGT-7 — FY 2024</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/annual-return/EFormMGT7_RRIL_2023_Signed.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Return MGT-7 — FY 2023</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/annual-return/Form_MGT_7_Raj_Rayon_2022_signed.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Return MGT-7 — FY 2022</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/annual-return/Form_MGT_7_rajrayon2021signed.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Annual Return MGT-7 — FY 2021</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- MOA, AOA &amp; Incorporation -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+        <span class="acc-text">
+          <span class="acc-text__title">MOA, AOA &amp; Incorporation</span>
+          <span class="acc-text__meta">Memorandum &amp; Articles of Association, certificates of incorporation</span>
+        </span>
+        <span class="acc-count">7 documents</span>
+        <span class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel__inner">
+          <ul class="file-list">
+            <li><a href="assets/investor/moa-aoa/MOA_AND_AOA.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Memorandum &amp; Articles of Association</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/moa-aoa/11_MOA_AOA_11.11.2021.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">MOA &amp; AOA — Updated 11.11.2021</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/moa-aoa/12_AOA.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Articles of Association (AOA)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/moa-aoa/MOA_OLD.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Memorandum of Association (Old)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/moa-aoa/Certificate_of_Incorporation.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Certificate of Incorporation</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/moa-aoa/Fresh_Certificate_of_Incorporation_Name_Change_2010.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Fresh Certificate of Incorporation — Name Change (2010)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/moa-aoa/Certificate_of_Registration_Change_of_State_2011.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Certificate of Registration — Change of State (2011)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- IBC &amp; SEBI KYC -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
+        <span class="acc-text">
+          <span class="acc-text__title">IBC &amp; SEBI KYC</span>
+          <span class="acc-text__meta">Insolvency resolution documents &amp; SEBI KYC circulars / investor forms</span>
+        </span>
+        <span class="acc-count">12 documents</span>
+        <span class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel__inner">
+          <div class="file-group">
+            <p class="file-group__label">IBC / NCLT</p>
+            <ul class="file-list">
+            <li><a href="assets/investor/ibc/8_Resolution_Plan_SA.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Resolution Plan</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/ibc/9_NCLT_ORDER_05.10.2021.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">NCLT Order — 05.10.2021</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            </ul>
+          </div>
+          <hr class="group-divider">
+ 
+          <div class="file-group">
+            <p class="file-group__label">SEBI KYC Circulars &amp; Investor Forms</p>
+            <ul class="file-list">
+            <li><a href="assets/investor/ibc/sebi-kyc/14-dec-21-sebi-circular.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">SEBI Circular — 14 Dec 2021</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/ibc/sebi-kyc/25-jan-22-sebi-circular.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">SEBI Circular — 25 Jan 2022</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/ibc/sebi-kyc/SEBI_Circular_and_Model_Tripartite_Agreement.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">SEBI Circular &amp; Model Tripartite Agreement</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/ibc/sebi-kyc/ECS_Mandate.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">ECS Mandate Form</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/ibc/sebi-kyc/Form_ISR-1_PAN_Bank_KYC.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Form ISR-1 — PAN, Bank &amp; KYC Registration</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/ibc/sebi-kyc/Form_ISR-2_Bank_Verification.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Form ISR-2 — Bank Verification</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/ibc/sebi-kyc/Form_ISR-3_Opt_Out.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Form ISR-3 — Opt Out</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/ibc/sebi-kyc/Form_ISR-4.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Form ISR-4</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/ibc/sebi-kyc/Form_SH-13_Registration_of_Nomination.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Form SH-13 — Registration of Nomination</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/ibc/sebi-kyc/Form_SH-14_Cancellation_Variation_of_Nomination.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Form SH-14 — Cancellation / Variation of Nomination</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <!-- IEPF — Unpaid Dividends -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <span class="acc-text">
+          <span class="acc-text__title">IEPF — Unpaid Dividends</span>
+          <span class="acc-text__meta">Investor Education &amp; Protection Fund: list of unpaid / unclaimed amounts</span>
+        </span>
+        <span class="acc-count">10 documents</span>
+        <span class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel__inner">
+          <ul class="file-list">
+            <li><a href="assets/investor/iepf/Unpaid_Dividend_AGM_2011.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Unpaid Dividend — AGM 2011</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/iepf/Unpaid_Dividend_AGM_2012.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Unpaid Dividend — AGM 2012</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/iepf/List_of_Unpaid_Shareholders_AGM_2013.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Unpaid Shareholders — AGM 2013</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/iepf/listofunpaid_shareholders_dividends_2014.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Unpaid Shareholders — 2014</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/iepf/unpaid-dividend-2015-1.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Unpaid Dividend — 2015 (Part 1)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/iepf/unpaid-divident-2015.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Unpaid Dividend — 2015</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/iepf/unpaid-divident-2016-1.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Unpaid Dividend — 2016 (Part 1)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/iepf/unpaid-divident-2016.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Unpaid Dividend — 2016</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/iepf/Unpaid_Share_Application_Money_AGM_2011.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Unpaid Share Application Money — AGM 2011</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/iepf/Unpaid_Share_Application_Money_AGM_2012.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Unpaid Share Application Money — AGM 2012</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- policies -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <span class="acc-text">
+          <span class="acc-text__title">Policies</span>
+          <span class="acc-text__meta">Company policies and procedures</span>
+        </span>
+        <span class="acc-count">10 documents</span>
+        <span class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel__inner">
+          <ul class="file-list">
+            <li><a href="C:\Users\svg_m\Downloads\policies\Dividend-Distribution-Policy.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Dividend-Distribution-Policy</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="C:\Users\svg_m\Downloads\policies\Code-of-Practices-and-Procedures-for-Fair-Disclosure-of-UPSI Reg. 8.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Code-of-Practices-and-Procedures-for-Fair-Disclosure-of-UPSI Reg. 8</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="C:\Users\svg_m\Downloads\policies\Familiarisation-programes-for-independent-directors.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Familiarisation-programes-for-independent-directors</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="C:\Users\svg_m\Downloads\policies\Documents-Preservation-and-Archival-Policy.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0_0 2-2V8z"/><polyline points="14 2_14_8_二十_8"/></svg></span>
+              <span class="file-pill__name">Documents-Preservation-and-Archival-Policy</span>
+
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="C:\Users\svg_m\Downloads\policies\Nomination and remuneration policy.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Nomination and remuneration policy</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/iepf/unpaid-divident-2015.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Letter-of-Appointment-of-Independent-Director</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/iepf/unpaid-divident-2016-1.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Policy-for-determination-of-materiality-of-any-event-information</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/iepf/unpaid-divident-2016.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Policy _Related party transcation</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/iepf/Unpaid_Share_Application_Money_AGM_2011.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Whistle-Blower-Policy</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/iepf/Unpaid_Share_Application_Money_AGM_2012.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Sexual Harrasment Policy</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ 
+ 
+    <!-- Credit Rating -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+        <span class="acc-text">
+          <span class="acc-text__title">Credit Rating</span>
+          <span class="acc-text__meta">External credit rating reports from rating agencies</span>
+        </span>
+        <span class="acc-count">1 document</span>
+        <span class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel__inner">
+          <ul class="file-list">
+            <li><a href="assets/investor/credit-rating/credit_ratings_india_research.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Credit Rating Report — India Research</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+ <!-- financial results -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span>
+        <span class="acc-text">
+          <span class="acc-text__title">Financial Results</span>
+          <span class="acc-text__meta">Quarterly and annual financial reports</span>
+        </span>
+        <span class="acc-count">1 document</span>
+        <span class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel__inner">
+          <ul class="file-list">
+            <li><a href="assets/investor/credit-rating/credit_ratings_india_research.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Credit Rating Report — India Research</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Newspaper Publications -->
+    <div class="acc-item" data-acc>
+      <button class="acc-trigger" aria-expanded="false">
+        <span class="acc-icon"><svg viewBox="0 0 24 24"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 0-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6z"/></svg></span>
+        <span class="acc-text">
+          <span class="acc-text__title">Newspaper Publications</span>
+          <span class="acc-text__meta">Statutory advertisements — AGM notices &amp; quarterly financial results</span>
+        </span>
+        <span class="acc-count">24 documents</span>
+        <span class="acc-chevron"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></span>
+      </button>
+      <div class="acc-panel" role="region">
+        <div class="acc-panel__inner">
+          <div class="file-group">
+            <p class="file-group__label">AGM Notice Publications</p>
+            <ul class="file-list">
+            <li><a href="assets/investor/newspaper-publications/Publication_of_AGM_Notice_Predispatch_2025.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">AGM Notice — Pre-Dispatch 2025</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/AGM_Notice_Post_Dispatch_2025.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">AGM Notice — Post-Dispatch 2025</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_of_AGM_Notice_Predispatch_2024.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">AGM Notice — Pre-Dispatch 2024</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_of_AGM_Notice_Postdispatch_2024.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">AGM Notice — Post-Dispatch 2024</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_of_AGM_Notice_Predispatch_Earlier.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">AGM Notice — Pre-Dispatch (Earlier)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_of_AGM_Notice_Postdispatch_Earlier.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">AGM Notice — Post-Dispatch (Earlier)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_of_AGM_Notice_Post_dispatch.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">AGM Notice — Post-Dispatch</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/06_Postal_Ballot_Newspaper_Submission.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Postal Ballot Notice — Newspaper Submission</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Newspaper_Adv_Noticeup.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Newspaper Advertisement Notice</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_of_Special_Window_Adv_Notice.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Special Window Advertisement Notice</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            </ul>
+          </div>
+          <hr class="group-divider">
+ 
+          <div class="file-group">
+            <p class="file-group__label">Financial Results Publications</p>
+            <ul class="file-list">
+            <li><a href="assets/investor/newspaper-publications/Publication_Results_30.06.2025.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Results — Q1 FY26 (30.06.2025)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_Result_31.12.2025.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Results — Q3 FY26 (31.12.2025)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_results_31-03-2025.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Results — Q4 FY25 (31.03.2025)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_Result_31-12-2024.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Results — Q3 FY25 (31.12.2024)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_Result_30.09.2024.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Results — Q2 FY25 (30.09.2024)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_Results_30.06.2024.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Results — Q1 FY25 (30.06.2024)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_Results_March_2024.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Results — Q4 FY24 (March 2024)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_Results_December_31.12.2023.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Results — Q3 FY24 (31.12.2023)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_Results_30.06.2023.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Results — Q1 FY24 (30.06.2023)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_Results_30.09.2022.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Results — Q2 FY23 (30.09.2022)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_Results_30.06.2022.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Results — Q1 FY23 (30.06.2022)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_Results_31.03.2022.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Results — Q4 FY22 (31.03.2022)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/Publication_Results_31.12.2021.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Results — Q3 FY22 (31.12.2021)</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            <li><a href="assets/investor/newspaper-publications/NewspaerPublicationofresults.pdf" class="file-pill" download>
+              <span class="file-pill__icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+              <span class="file-pill__name">Results — Newspaper Publication</span>
+              <span class="file-pill__dl"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+            </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- /accordion-grid -->
+</section>
+ 
+<script>
+(function () {
+  var items = document.querySelectorAll('[data-acc]');
+  items.forEach(function (item) {
+    var trigger = item.querySelector('.acc-trigger');
+    trigger.addEventListener('click', function () {
+      var isOpen = item.classList.contains('is-open');
+      items.forEach(function (i) {
+        i.classList.remove('is-open');
+        i.querySelector('.acc-trigger').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+        item.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  });
+})();
+</script>
+
+    
+
+    <!-- <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+      <div class="rounded-3xl bg-white p-10 shadow-xl border border-[#E5E7EB]/80">
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div class="space-y-4">
+            <span class="text-sm uppercase tracking-[0.3em] text-[#7BB8D4]">Investor Resources</span>
+            <h2 class="text-3xl font-semibold text-[#1E2E6E]">Download the latest reports and shareholder data</h2>
+          </div>
+          <div class="space-y-4">
+            <a href="https://www.rajrayon.com/investor-relations.php#annual-reports" target="_blank" rel="noopener" class="rounded-3xl border border-[#D6EAF3] bg-[#F8FAFC] p-6 block hover:shadow-md transition">
+              <h3 class="font-semibold text-[#1E2E6E]">Annual Reports</h3>
+              <p class="text-[#475569] text-sm mt-2">Complete financial statements and management commentary.</p>
+            </a>
+            <a href="https://www.rajrayon.com/investor-relations.php#shareholding-pattern" target="_blank" rel="noopener" class="rounded-3xl border border-[#D6EAF3] bg-[#F8FAFC] p-6 block hover:shadow-md transition">
+              <h3 class="font-semibold text-[#1E2E6E]">Shareholding Pattern</h3>
+              <p class="text-[#475569] text-sm mt-2">Quarterly distribution of promoters, institutional and retail shareholders.</p>
+            </a>
+          </div>
+          <div class="space-y-4">
+            <a href="https://www.rajrayon.com/investor-relations.php#corporate-governance" target="_blank" rel="noopener" class="rounded-3xl border border-[#D6EAF3] bg-[#F8FAFC] p-6 block hover:shadow-md transition">
+              <h3 class="font-semibold text-[#1E2E6E]">Corporate Governance</h3>
+              <p class="text-[#475569] text-sm mt-2">Board structure, committee charters, and governance updates.</p>
+            </a>
+            <a href="https://www.rajrayon.com/investor-relations.php#dividend-policy" target="_blank" rel="noopener" class="rounded-3xl border border-[#D6EAF3] bg-[#F8FAFC] p-6 block hover:shadow-md transition">
+              <h3 class="font-semibold text-[#1E2E6E]">Dividend Policy</h3>
+              <p class="text-[#475569] text-sm mt-2">Shareholder value creation through disciplined capital allocation.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="investor-downloads" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+      <div class="rounded-3xl bg-white p-10 shadow-xl border border-[#E5E7EB]/80">
+        <div class="space-y-10">
+          <section id="annual-reports">
+            <h3 class="text-2xl font-semibold text-[#1E2E6E] mb-4">Annual Reports</h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <a href="assets/investor/annual-reports/Annual_Report_2023.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Annual Report 2023</a>
+              <a href="assets/investor/annual-reports/Annual_Report_2024.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Annual Report 2024</a>
+              <a href="assets/investor/annual-reports/Annual_Report_2025.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Annual Report 2025</a>
+              <a href="assets/investor/annual-reports/Annual_Report_2026.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Annual Report 2026</a>
+              <a href="assets/investor/annual-reports/Annual_Report_2021.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Annual Report 2021</a>
+              <a href="assets/investor/annual-reports/Annual_Report_2020-22.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Annual Report 2020-22</a>
+            </div>
+          </section>
+
+          <section id="shareholding-pattern">
+            <h3 class="text-2xl font-semibold text-[#1E2E6E] mb-4">Shareholding Pattern</h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <a href="assets/investor/shareholding-pattern/SHP_30.06.2026.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>SHP — Q1 FY27 (30.06.2026)</a>
+              <a href="assets/investor/shareholding-pattern/SHP_30-06-2025.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Shareholding Pattern 30-06-2025</a>
+              <a href="assets/investor/shareholding-pattern/SHP_30.09.2025.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Shareholding Pattern 30.09.2025</a>
+              <a href="assets/investor/shareholding-pattern/SHP_31.03.2026.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Shareholding Pattern 31.03.2026</a>
+              <a href="assets/investor/shareholding-pattern/SHP_31.12.2025.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Shareholding Pattern 31.12.2025</a>
+            </div>
+          </section>
+
+          <section id="financial-results">
+            <h3 class="text-2xl font-semibold text-[#1E2E6E] mb-4">Financial Results</h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <a href="assets/investor/financial-results/Q1_FY27_Financial_Results.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Financial Results — Q1 FY27</a>
+            </div>
+          </section>
+
+          <section id="corporate-governance">
+            <h3 class="text-2xl font-semibold text-[#1E2E6E] mb-4">Corporate Governance</h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <a href="assets/investor/corporate-governance/Code-of-Practices-and-Procedures-for-Fair-Disclosure-of-UPSI-Reg-8.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Fair Disclosure of UPSI</a>
+              <a href="assets/investor/corporate-governance/Documents-Preservation-and-Archival-Policy.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Document Preservation & Archival Policy</a>
+              <a href="assets/investor/corporate-governance/Familiarisation-programes-for-independent-directors.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Independent Director Familiarisation</a>
+              <a href="assets/investor/corporate-governance/Integrated_Governance_30.06.2025.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Integrated Governance 30.06.2025</a>
+              <a href="assets/investor/corporate-governance/Integrated_Governance_30.09.2025.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Integrated Governance 30.09.2025</a>
+              <a href="assets/investor/corporate-governance/Integrated_Governance_31.03.2026.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Integrated Governance 31.03.2026</a>
+              <a href="assets/investor/corporate-governance/Integrated_Governance_31.12.2025.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Integrated Governance 31.12.2025</a>
+              <a href="assets/investor/corporate-governance/Letter-of-Appointment-of-Independent-Director.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Independent Director Appointment Letter</a>
+              <a href="assets/investor/corporate-governance/Nomination_and_Remuneration_Policy.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Nomination & Remuneration Policy</a>
+              <a href="assets/investor/corporate-governance/Policy_Related_Party_Transaction.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Related Party Transaction Policy</a>
+              <a href="assets/investor/corporate-governance/Policy-for-determination-of-materiality-of-any-event-information.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Materiality Determination Policy</a>
+              <a href="assets/investor/corporate-governance/Sexual_Harassment_Policy.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Sexual Harassment Policy</a>
+              <a href="assets/investor/corporate-governance/Whistle-Blower-Policy.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Whistle Blower Policy</a>
+              <a href="assets/investor/corporate-governance/Notice_of_31st_Annual_General_Meeting.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>31st AGM Notice</a>
+              <a href="assets/investor/corporate-governance/Notice_of_32nd_Annual_General_Meeting.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>32nd AGM Notice</a>
+              <a href="assets/investor/corporate-governance/Website_Postal_Ballot_Notice.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Postal Ballot Notice</a>
+              <a href="assets/investor/corporate-governance/08_Resolution_Plan_SA.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Resolution Plan</a>
+              <a href="assets/investor/corporate-governance/09_NCLT_ORDER_05.10.2021.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>NCLT Order 05.10.2021</a>
+            </div>
+          </section>
+
+          <section id="board-structure">
+            <h3 class="text-2xl font-semibold text-[#1E2E6E] mb-6">Board Structure & Committee Details</h3>
+            
+            <!--Board Members -->
+           <!-- <div class="mb-8">
+              <h4 class="text-lg font-semibold text-[#1E2E6E] mb-4">Board of Directors</h4>
+              <div class="overflow-x-auto">
+                <table class="w-full border-collapse">
+                  <thead>
+                    <tr class="bg-[#D6EAF3]/30">
+                      <th class="border border-[#D6EAF3] px-4 py-3 text-left text-sm font-semibold text-[#1E2E6E]">Sr No</th>
+                      <th class="border border-[#D6EAF3] px-4 py-3 text-left text-sm font-semibold text-[#1E2E6E]">Name</th>
+                      <th class="border border-[#D6EAF3] px-4 py-3 text-left text-sm font-semibold text-[#1E2E6E]">Category</th>
+                      <th class="border border-[#D6EAF3] px-4 py-3 text-left text-sm font-semibold text-[#1E2E6E]">Designation</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="hover:bg-[#F4F7FB]/50">
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">1</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Mr. Rajkumar Satyanarayan Agarwal</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Executive Director</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Managing Director</td>
+                    </tr>
+                    <tr class="hover:bg-[#F4F7FB]/50">
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">2</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Mr. Sandiip Satyanarayan Agarwal</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Executive Director</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Whole-Time Director & CFO</td>
+                    </tr>
+                    <tr class="hover:bg-[#F4F7FB]/50">
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">3</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Ms. Sapna Rajkumar Agarwal</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Non-Executive Non-Independent Director (Women Director)</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Director</td>
+                    </tr>
+                    <tr class="hover:bg-[#F4F7FB]/50">
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">4</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Mrs. Supriya Mahesh Pujari</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Woman Independent Director</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Director</td>
+                    </tr>
+                    <tr class="hover:bg-[#F4F7FB]/50">
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">5</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Mr. Vinodkumar Bajranglal Dalmia</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Independent Director</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Director</td>
+                    </tr>
+                    <tr class="hover:bg-[#F4F7FB]/50">
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">6</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Mr. Kailashnath Jeevan Koppikar</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Independent Director</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Director</td>
+                    </tr>
+                    <tr class="hover:bg-[#F4F7FB]/50">
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">7</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Mr. Chintan Dharod</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">Company Secretary</td>
+                      <td class="border border-[#D6EAF3] px-4 py-3 text-sm text-[#4B5563]">CS & Compliance Officer</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div> -->
+
+            <!-- Board Committees -->
+            <!-- <div class="grid md:grid-cols-2 gap-6">
+              <!-- Audit Committee -->
+              <!--<div class="border border-[#D6EAF3] rounded-2xl p-6 bg-[#F8FAFC]">
+                <h5 class="font-semibold text-[#1E2E6E] mb-4">I. Audit Committee</h5>
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Kailashnath Jeevan Koppikar</span>
+                    <span class="font-semibold text-[#7BB8D4]">Chairman</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Vinodkumar Bajranglal Dalmia</span>
+                    <span class="font-semibold text-[#7BB8D4]">Member</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Ms. Sapna Rajkumar Agarwal</span>
+                    <span class="font-semibold text-[#7BB8D4]">Member</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Nomination & Remuneration Committee -->
+              <!-- <div class="border border-[#D6EAF3] rounded-2xl p-6 bg-[#F8FAFC]">
+                <h5 class="font-semibold text-[#1E2E6E] mb-4">II. Nomination & Remuneration Committee</h5>
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Vinodkumar Bajranglal Dalmia</span>
+                    <span class="font-semibold text-[#7BB8D4]">Chairman</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Kailashnath Jeevan Koppikar</span>
+                    <span class="font-semibold text-[#7BB8D4]">Member</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Ms. Sapna Rajkumar Agarwal</span>
+                    <span class="font-semibold text-[#7BB8D4]">Member</span>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- Stakeholders' Relationship Committee -->
+              <!-- <div class="border border-[#D6EAF3] rounded-2xl p-6 bg-[#F8FAFC]">
+                <h5 class="font-semibold text-[#1E2E6E] mb-4">III. Stakeholders' Relationship Committee</h5>
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Vinodkumar Bajranglal Dalmia</span>
+                    <span class="font-semibold text-[#7BB8D4]">Chairman</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Kailashnath Jeevan Koppikar</span>
+                    <span class="font-semibold text-[#7BB8D4]">Member</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Ms. Sapna Rajkumar Agarwal</span>
+                    <span class="font-semibold text-[#7BB8D4]">Member</span>
+                  </div>
+                </div>
+              </div> -->
+
+              <!-- Risk Management Committee -->
+              <!-- <div class="border border-[#D6EAF3] rounded-2xl p-6 bg-[#F8FAFC]">
+                <h5 class="font-semibold text-[#1E2E6E] mb-4">IV. Risk Management Committee</h5>
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Sandiip Satyanarayan Agarwal</span>
+                    <span class="font-semibold text-[#7BB8D4]">Chairman</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Vinodkumar Bajranglal Dalmia</span>
+                    <span class="font-semibold text-[#7BB8D4]">Member</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-[#4B5563]">Mr. Kailashnath Jeevan Koppikar</span>
+                    <span class="font-semibold text-[#7BB8D4]">Member</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section> --> 
+
+          <!-- <section id="dividend-policy">
+            <h3 class="text-2xl font-semibold text-[#1E2E6E] mb-4">Dividend Policy</h3>
+            <div class="grid gap-4">
+              <a href="assets/investor/dividend-policy/Dividend-Distribution-Policy.pdf" class="rounded-3xl border border-[#D6EAF3] p-6 block hover:bg-[#F4F7FB] transition" download>Dividend Distribution Policy</a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section> -->
+  </main>
+
+  <!-- <footer class="relative bg-navy-950 pt-20 pb-8 border-t border-white/5 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-cream-400 rounded-lg flex items-center justify-center">
+              <span class="text-navy-900 font-display font-bold text-lg">RR</span>
+            </div>
+            <div>
+              <span class="text-white font-display text-xl font-semibold">Raj Rayon</span>
+              <span class="block text-cream-400/70 text-[10px] uppercase tracking-[0.2em] -mt-0.5">Industries Limited</span>
+            </div>
+          </div>
+          <p class="text-white/50 leading-relaxed max-w-md mb-6">A BSE & NSE listed company engaged in manufacturing of Polyester Texturised Yarn (PTY), Partially Oriented Yarn (POY), & Fully Drawn Yarn (FDY) since 1993.</p>
+          <div class="flex gap-3 mb-6">
+            <a href="#" class="w-10 h-10 bg-white/5 hover:bg-cream-400/20 rounded-lg flex items-center justify-center transition-colors duration-300">
+              <i data-lucide="linkedin" class="w-4 h-4 text-white/60 hover:text-cream-400"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/5 hover:bg-cream-400/20 rounded-lg flex items-center justify-center transition-colors duration-300">
+              <i data-lucide="mail" class="w-4 h-4 text-white/60 hover:text-cream-400"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/5 hover:bg-cream-400/20 rounded-lg flex items-center justify-center transition-colors duration-300">
+              <i data-lucide="phone" class="w-4 h-4 text-white/60 hover:text-cream-400"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm uppercase tracking-widest mb-6">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="home_.html" class="text-white/50 hover:text-cream-400 transition-colors text-sm flex items-center gap-2">Home</a></li>
+            <li><a href="infrastructure_.html" class="text-white/50 hover:text-cream-400 transition-colors text-sm flex items-center gap-2">Infrastructure</a></li>
+            <li><a href="products_.html" class="text-white/50 hover:text-cream-400 transition-colors text-sm flex items-center gap-2">Products</a></li>
+            <li><a href="investor.html" class="text-white/50 hover:text-cream-400 transition-colors text-sm flex items-center gap-2">Investor Relations</a></li>
+            <li><a href="career.html" class="text-white/50 hover:text-cream-400 transition-colors text-sm flex items-center gap-2">Careers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm uppercase tracking-widest mb-6">Contact</h4>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-4 h-4 text-cream-400 mt-1 flex-shrink-0"></i>
+              <p class="text-white/50 text-sm">Silvassa, Union Territory of Dadra & Nagar Haveli, India</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-4 h-4 mt-1 flex-shrink-0" style="color:#7BB8D4"></i>
+              <p class="text-sm" style="color:rgba(255,255,255,.5)">Agarwal Golden Chamber, 2nd & 3rd Floor,
+Off. New Link Road, A-13,Veera Desai Indl. Estate,
+Andheri (West), Mumbai- 400 053, Maharashtra, India.</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <i data-lucide="mail" class="w-4 h-4 text-cream-400 flex-shrink-0"></i>
+              <a href="mailto:info@rajrayon.com" class="text-white/50 text-sm hover:text-cream-400 transition-colors">info@rajrayon.com</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <i data-lucide="phone" class="w-4 h-4 text-cream-400 flex-shrink-0"></i>
+              <a href="tel:+91260262222" class="text-white/50 text-sm hover:text-cream-400 transition-colors">+91 260 262222</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-white/30 text-xs">© 2024 Raj Rayon Industries Limited. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-white/30 hover:text-cream-400 text-xs transition-colors">Privacy Policy</a>
+          <a href="#" class="text-white/30 hover:text-cream-400 text-xs transition-colors">Terms of Service</a>
+          <a href="#" class="text-white/30 hover:text-cream-400 text-xs transition-colors">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer> -->
+  <footer class="relative bg-navy-950 pt-20 pb-8 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <!-- Company Info -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10  rounded-lg flex items-center justify-center" style="color:#7BB8D4">
+              <span class="text-navy-900 font-display font-bold text-lg">RR</span>
+            </div>
+            <div>
+              <span class="text-white font-display text-xl font-semibold">Raj Rayon</span>
+              <span class="block  text-[10px] uppercase tracking-[0.2em] -mt-0.5" style="color:#7BB8D4">Industries Limited</span>
+            </div>
+          </div>
+          <p class="text-white/50 leading-relaxed max-w-md mb-6">A BSE & NSE listed company engaged in manufacturing of Polyester Texturised Yarn (PTY), Partially Oriented Yarn (POY), & Fully Drawn Yarn (FDY) since 1993.</p>
+          <div class="flex gap-3">
+            <a href="#" class="w-10 h-10 bg-white/5 hover:bg-cream-400/20 rounded-lg flex items-center justify-center transition-colors duration-300">
+              <i data-lucide="linkedin" class="w-4 h-4 text-white/60 hover:text-cream-400"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/5 hover:bg-cream-400/20 rounded-lg flex items-center justify-center transition-colors duration-300">
+              <i data-lucide="mail" class="w-4 h-4 text-white/60 hover:text-cream-400"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/5 hover:bg-cream-400/20 rounded-lg flex items-center justify-center transition-colors duration-300">
+              <i data-lucide="phone" class="w-4 h-4 text-white/60 hover:text-cream-400"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-white font-semibold text-sm uppercase tracking-widest mb-6">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="home_.html" class="text-white/50 hover:text-cream-400 transition-colors text-sm flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Home</a></li>
+            <li><a href="infrastructure_.html" class="text-white/50 hover:text-cream-400 transition-colors text-sm flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Infrastructure</a></li>
+            <li><a href="products_.html" class="text-white/50 hover:transition-colors text-sm flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Products</a></li>
+            <li><a href="investor.html" class="text-white/50 hover:text-cream-400 transition-colors text-sm flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Investor Relations</a></li>
+            <li><a href="career.html" class="text-white/50 hover:text-cream-400 transition-colors text-sm flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="text-white font-semibold text-sm uppercase tracking-widest mb-6">Contact</h4>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-4 h-4 mt-1 flex-shrink-0" style="color:#7BB8D4"></i>
+              <p class="text-white/50 text-sm">Survey No. 177/1/3 & 177/1/4,Silvassa, Union Territory of Dadra & Nagar Haveli, India</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-4 h-4 mt-1 flex-shrink-0" style="color:#7BB8D4"></i>
+              <p class="text-sm" style="color:rgba(255,255,255,.5)">Agarwal Golden Chamber, 2nd & 3rd Floor,
+Off. New Link Road, A-13,Veera Desai Indl. Estate,
+Andheri (West), Mumbai- 400 053, Maharashtra, India.</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <i data-lucide="mail" class="w-4 h-4  flex-shrink-0" style="color:#7BB8D4"></i>
+              <a href="mailto:info@rajrayon.com" class="text-white/50 text-sm  transition-colors" style="color:#7BB8D4">info@rajrayon.com</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <i data-lucide="phone" class="w-4 h-4  flex-shrink-0" style="color:#7BB8D4"></i>
+              <a href="tel:+91-22- 4250 9700" class="text-white/50 text-sm hover:text-cream-400 transition-colors">+91-22- 4250 9700</a>
+              
+        </div>
+         <div class="flex items-center gap-3">
+              <i data-lucide="phone" class="w-4 h-4 flex-shrink-0" style="color:#7BB8D4"></i>
+              <a href="tel:+91-9879504195" class="text-white/50 text-sm hover:text-cream-400 transition-colors">+91-9879504195</a>
+              
+        </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-white/30 text-xs">© 2024 Raj Rayon Industries Limited. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-white/30 hover:text-cream-400 text-xs transition-colors" style="color:#7BB8D4">Privacy Policy</a>
+          <a href="#" class="text-white/30 hover:text-cream-400 text-xs transition-colors" style="color:#7BB8D4">Terms of Service</a>
+          <a href="#" class="text-white/30  text-xs transition-colors" style="color:#7BB8D4">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>lucide.createIcons();</script>
+</body>
+</html>

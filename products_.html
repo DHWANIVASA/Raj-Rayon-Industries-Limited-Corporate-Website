@@ -1,0 +1,1811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Raj Rayon Industries Limited</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#1E2E6E',
+              sky: '#7BB8D4',
+              light: '#D6EAF3',
+              page: '#F4F7FB',
+              text: '#2D2D2D',
+            },
+            navy: {
+              50: '#edf3f9',
+              100: '#d8e6f3',
+              200: '#b9d0e7',
+              300: '#93b2d8',
+              400: '#6a8ec8',
+              500: '#4b73bf',
+              600: '#3b61af',
+              700: '#2f4f98',
+              800: '#26407f',
+              900: '#1E2E6E',
+              950: '#17274f',
+            },
+            sky: {
+              100: '#eef7fb',
+              200: '#d9edf6',
+              300: '#c1e2f0',
+              400: '#a8d5e8',
+              500: '#7BB8D4',
+            },
+            cream: {
+              50: '#f7fbfd',
+              100: '#edf5f8',
+              200: '#dfeff5',
+              300: '#D6EAF3',
+              400: '#7BB8D4',
+              500: '#7BB8D4',
+            }
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #F4F7FB; color: #2D2D2D; }
+    
+    .nav-scrolled { background: #ffffff !important; backdrop-filter: blur(20px); box-shadow: 0 6px 24px rgba(30,46,110,0.08); }
+    .mobile-menu { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .mobile-menu.open { transform: translateX(0); }
+
+    /* Hero Section */
+    /* .hero-gradient {
+      background: linear-gradient(135deg, #1E2E6E 0%, #0f172a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-gradient::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(123,184,212,0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 80%, rgba(236,204,95,0.05) 0%, transparent 50%);
+      pointer-events: none;
+    } */
+ *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:#0c1126;overflow-x:hidden}
+ 
+    /* ── SHELL ── */
+    .hero-slider{position:relative;width:100%;height:100vh;min-height:620px;max-height:940px;overflow:hidden}
+ 
+    /* ── SLIDES ── */
+    .slide{position:absolute;inset:0;opacity:0;transition:opacity .95s cubic-bezier(.4,0,.2,1);pointer-events:none}
+    .slide.active{opacity:1;pointer-events:all}
+ 
+    /* per-slide backgrounds */
+    .s1-bg{background:linear-gradient(135deg,#0c1126 0%,#1E2E6E 55%,#0f1a3a 100%)}
+    .s2-bg{background:linear-gradient(135deg,#190609 0%,#7f1d1d 52%,#1a0005 100%)}
+    .s3-bg{background:linear-gradient(135deg,#071612 0%,#064e3b 50%,#022c22 100%)}
+ 
+    /* ── JOURNEY RIBBON (top) ── */
+    .journey-ribbon{
+      position:absolute;top:0;left:0;right:0;z-index:40;
+      display:flex;align-items:center;justify-content:center;
+      padding:18px 6% 0;gap:0;
+      pointer-events:none;
+    }
+    .jstep{display:flex;align-items:center;gap:0;cursor:pointer;pointer-events:all}
+    .jstep-pill{
+      display:flex;align-items:center;gap:7px;
+      padding:6px 14px;border-radius:20px;
+      font-size:9.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+      border:1px solid rgba(255,255,255,0.12);
+      color:rgba(255,255,255,0.35);
+      background:rgba(255,255,255,0.04);
+      transition:all .3s ease;
+      white-space:nowrap;
+    }
+    .jstep.active .jstep-pill{color:#fff;border-color:rgba(255,255,255,0.4);background:rgba(255,255,255,0.1)}
+    .jstep-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.2);flex-shrink:0;transition:background .3s}
+    .jstep.active .jstep-dot{background:#fff}
+    .jconnector{width:32px;height:1px;background:rgba(255,255,255,0.15);margin:0 4px;flex-shrink:0}
+ 
+    /* colour each step dot when active */
+    .slide-1 ~ * .jstep[data-s="0"] .jstep-dot,
+    .jstep[data-s="0"].active .jstep-dot{background:#7BB8D4}
+    .jstep[data-s="1"].active .jstep-dot{background:#f87171}
+    .jstep[data-s="2"].active .jstep-dot{background:#34d399}
+ 
+    /* ── BG ILLUSTRATION ── */
+    .slide-bg{position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end;padding-right:2%}
+    .slide-bg svg.illo{width:54%;max-width:720px;height:100%;opacity:0;transform:scale(.97) translateX(24px);transition:opacity 1.1s ease .25s,transform 1.1s ease .25s}
+    .slide.active .slide-bg svg.illo{opacity:.22;transform:scale(1.03) translateX(0)}
+ 
+    /* ── PRODUCT GRID PANEL (right side, slides 2+3) ── */
+    .product-panel{
+      position:absolute;right:0;top:0;bottom:0;width:52%;
+      display:flex;flex-direction:column;justify-content:center;align-items:center;
+      padding:80px 5% 100px;gap:14px;z-index:8;
+      opacity:0;transform:translateX(30px);
+      transition:opacity .7s ease .5s,transform .7s ease .5s;
+    }
+    .slide.active .product-panel{opacity:1;transform:translateX(0)}
+ 
+    .panel-label{
+      font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;
+      margin-bottom:10px;text-align:center;
+    }
+    .product-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;max-width:480px}
+    .prod-card{
+      border-radius:14px;overflow:hidden;position:relative;
+      border:1px solid rgba(255,255,255,0.1);
+      background:rgba(255,255,255,0.04);
+      aspect-ratio:1/1;
+      transition:transform .25s ease,border-color .25s ease;
+      cursor:pointer;
+      text-decoration:none;
+    }
+    .prod-card:hover{transform:scale(1.03);border-color:rgba(255,255,255,0.3)}
+    .prod-card img{width:100%;height:100%;object-fit:cover;display:block;opacity:.75;transition:opacity .25s}
+    .prod-card:hover img{opacity:1}
+    .prod-card .card-label{
+      position:absolute;bottom:0;left:0;right:0;
+      padding:28px 10px 10px;
+      background:linear-gradient(to top,rgba(0,0,0,.85) 0%,transparent 100%);
+      font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;
+      text-align:center;line-height:1.3;
+    }
+ 
+    /* "more" tile */
+    .prod-more{
+      border-radius:14px;border:1px dashed rgba(255,255,255,0.2);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+      aspect-ratio:1/1;cursor:pointer;text-decoration:none;
+      transition:border-color .25s,background .25s;
+    }
+    .prod-more:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.06)}
+    .prod-more span.more-icon{font-size:28px;opacity:.5}
+    .prod-more span.more-text{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+ 
+    /* ── OVERLAY GRADIENTS ── */
+    .slide-overlay{position:absolute;inset:0}
+    .s1-overlay{background:linear-gradient(108deg,#0c1126 0%,#0c1126 26%,rgba(12,17,38,.92) 44%,rgba(12,17,38,.45) 64%,rgba(12,17,38,.05) 100%)}
+    .s2-overlay{background:linear-gradient(108deg,#190609 0%,#190609 26%,rgba(25,6,9,.92) 44%,rgba(25,6,9,.4) 62%,rgba(25,6,9,.02) 100%)}
+    .s3-overlay{background:linear-gradient(108deg,#071612 0%,#071612 26%,rgba(7,22,18,.92) 44%,rgba(7,22,18,.4) 62%,rgba(7,22,18,.02) 100%)}
+    .slide-overlay::after{content:'';position:absolute;bottom:0;left:0;right:0;height:32%}
+    .s1-overlay::after{background:linear-gradient(to top,#0c1126 0%,transparent 100%)}
+    .s2-overlay::after{background:linear-gradient(to top,#190609 0%,transparent 100%)}
+    .s3-overlay::after{background:linear-gradient(to top,#071612 0%,transparent 100%)}
+ 
+    /* ── CONTENT ── */
+    .slide-content{position:relative;z-index:10;height:100%;display:flex;flex-direction:column;justify-content:center;padding:60px 6% 100px;max-width:52%}
+ 
+    /* stagger animations */
+    .sa{opacity:0;transform:translateY(16px)}
+    .sa1{transition:opacity .55s ease .18s,transform .55s ease .18s}
+    .sa2{transition:opacity .55s ease .32s,transform .55s ease .32s}
+    .sa3{transition:opacity .6s ease .46s,transform .6s ease .46s}
+    .sa4{transition:opacity .6s ease .6s,transform .6s ease .6s}
+    .sa5{transition:opacity .6s ease .74s,transform .6s ease .74s}
+    .sa6{transition:opacity .6s ease .88s,transform .6s ease .88s}
+    .slide.active .sa{opacity:1;transform:translateY(0)}
+ 
+    /* ── PROVENANCE TAG (slides 2 & 3) ── */
+    .provenance-tag{
+      display:inline-flex;align-items:center;gap:8px;
+      margin-bottom:14px;
+      padding:7px 14px 7px 8px;
+      border-radius:24px;
+      background:rgba(255,255,255,0.07);
+      border:1px solid rgba(255,255,255,0.15);
+      width:fit-content;
+    }
+    .prov-icon{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;flex-shrink:0}
+    .prov-text{font-size:9.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+    .prov-text strong{color:#fff}
+ 
+    /* eyebrow */
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
+    .etag{font-size:9.5px;font-weight:700;letter-spacing:.35em;text-transform:uppercase;padding:5px 13px;border-radius:20px}
+    .etag-blue{color:#7BB8D4;border:1px solid rgba(123,184,212,.38);background:rgba(123,184,212,.09)}
+    .etag-red {color:#fca5a5;border:1px solid rgba(252,165,165,.38);background:rgba(252,165,165,.09)}
+    .etag-green{color:#6ee7b7;border:1px solid rgba(110,231,183,.38);background:rgba(110,231,183,.09)}
+    .enum{font-size:11px;color:rgba(255,255,255,.3);font-weight:500;letter-spacing:.12em}
+ 
+    .sub{font-size:clamp(.75rem,1vw,.86rem);font-weight:700;letter-spacing:.25em;text-transform:uppercase;margin-bottom:10px}
+    .sub-blue{color:#7BB8D4}.sub-red{color:#fca5a5}.sub-green{color:#6ee7b7}
+ 
+    .title{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.8vw,3.9rem);font-weight:700;color:#fff;line-height:1.08;margin-bottom:16px}
+ 
+    .desc{font-size:clamp(.85rem,1.2vw,.97rem);line-height:1.74;max-width:480px;margin-bottom:24px}
+    .desc-blue{color:rgba(214,234,243,.78)}
+    .desc-red{color:rgba(255,220,220,.78)}
+    .desc-green{color:rgba(200,245,228,.75)}
+ 
+    /* product pills */
+    .pill-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+    .pill{font-size:10px;font-weight:700;letter-spacing:.12em;padding:6px 14px;border-radius:6px}
+    .pill-blue{background:rgba(123,184,212,.13);border:1px solid rgba(123,184,212,.3);color:#D6EAF3}
+    .pill-red{background:rgba(248,113,113,.11);border:1px solid rgba(248,113,113,.28);color:#fecaca}
+    .pill-green{background:rgba(52,211,153,.11);border:1px solid rgba(52,211,153,.28);color:#a7f3d0}
+ 
+    /* spec strip */
+    .specs{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+    .sc .lbl{font-size:8.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;display:block;margin-bottom:3px}
+    .lbl-blue{color:rgba(123,184,212,.7)}.lbl-red{color:rgba(252,165,165,.7)}.lbl-green{color:rgba(110,231,183,.7)}
+    .sc .val{font-size:13px;font-weight:600;color:#fff}
+ 
+    /* arrow hint */
+    .arrow-hint{display:inline-flex;align-items:center;gap:11px;cursor:pointer;margin-bottom:24px;width:fit-content}
+    .ah-text{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+    .ah-circle{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .25s,background .25s,border-color .25s}
+    .ah-blue{border:1.5px solid rgba(123,184,212,.45);background:rgba(123,184,212,.08)}
+    .ah-red {border:1.5px solid rgba(248,113,113,.45);background:rgba(248,113,113,.08)}
+    .arrow-hint:hover .ah-circle{transform:translateX(5px)}
+    .arrow-hint:hover .ah-blue{background:rgba(123,184,212,.22);border-color:#7BB8D4}
+    .arrow-hint:hover .ah-red {background:rgba(248,113,113,.22);border-color:#f87171}
+    @keyframes bounce-r{0%,100%{transform:translateX(0)}55%{transform:translateX(5px)}}
+    .ah-circle svg{animation:bounce-r 1.9s ease-in-out infinite}
+ 
+    /* SVG logo badge */
+    .logo-badge{display:inline-flex;align-items:center;gap:12px;margin-bottom:18px;padding:8px 16px 8px 8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:10px;backdrop-filter:blur(6px);width:fit-content}
+    .logo-badge img{height:34px;width:auto;object-fit:contain;filter:brightness(1.1)}
+    .logo-badge .lb-text{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.45);line-height:1.5}
+    .logo-badge .lb-text strong{display:block;font-size:11px;color:#fca5a5;letter-spacing:.08em}
+ 
+    /* buttons */
+    .actions{display:flex;gap:12px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;font-weight:700;font-size:.86rem;border-radius:8px;cursor:pointer;text-decoration:none;letter-spacing:.03em;border:none;transition:transform .22s,box-shadow .22s,background .22s,color .22s}
+    .btn-blue{background:#7BB8D4;color:#1E2E6E}
+    .btn-blue:hover{background:#fff;transform:translateY(-2px);box-shadow:0 14px 36px rgba(123,184,212,.35)}
+    .btn-red{background:#dc2626;color:#fff}
+    .btn-red:hover{background:#fff;color:#7f1d1d;transform:translateY(-2px);box-shadow:0 14px 36px rgba(220,38,38,.4)}
+    .btn-green{background:#059669;color:#fff}
+    .btn-green:hover{background:#fff;color:#064e3b;transform:translateY(-2px);box-shadow:0 14px 36px rgba(5,150,105,.4)}
+    .btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:rgba(255,255,255,.09);color:#fff;font-weight:600;font-size:.86rem;border-radius:8px;border:1px solid rgba(255,255,255,.2);cursor:pointer;text-decoration:none;letter-spacing:.03em;backdrop-filter:blur(6px);transition:background .22s,transform .22s}
+    .btn-ghost:hover{background:rgba(255,255,255,.17);transform:translateY(-2px)}
+ 
+    /* ── THUMBNAIL ROW ── */
+    .thumb-row{position:absolute;bottom:0;left:0;right:0;z-index:20;padding:0 6% 24px;display:flex}
+    .thumb-item{flex:1;position:relative;cursor:pointer;padding:12px 10px 0;border-top:3px solid rgba(255,255,255,.1);transition:border-color .3s}
+    .thumb-item.t-blue{border-top-color:#7BB8D4}
+    .thumb-item.t-red {border-top-color:#dc2626}
+    .thumb-item.t-green{border-top-color:#059669}
+    .tprog{position:absolute;top:-3px;left:0;height:3px;width:0%;border-radius:0 2px 2px 0}
+    .tp-blue{background:#7BB8D4}.tp-red{background:#dc2626}.tp-green{background:#059669}
+    .tlabel{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-bottom:4px;transition:color .3s}
+    .thumb-item.t-blue  .tlabel{color:#7BB8D4}
+    .thumb-item.t-red   .tlabel{color:#fca5a5}
+    .thumb-item.t-green .tlabel{color:#6ee7b7}
+    .thumb-item:not(.t-blue):not(.t-red):not(.t-green):hover .tlabel{color:rgba(255,255,255,.6)}
+    .tname{font-size:clamp(.76rem,.95vw,.88rem);font-weight:600;color:rgba(255,255,255,.42);line-height:1.3;transition:color .3s}
+    .thumb-item.t-blue .tname,.thumb-item.t-red .tname,.thumb-item.t-green .tname,.thumb-item:hover .tname{color:#fff}
+    .tsub{font-size:9px;color:rgba(255,255,255,.22);margin-top:2px;transition:color .3s}
+    .thumb-item:hover .tsub{color:rgba(255,255,255,.42)}
+ 
+    /* ── ARROWS ── */
+    .arr-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:30;width:46px;height:46px;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(8px);color:#fff;transition:background .22s,transform .22s}
+    .arr-btn:hover{background:rgba(255,255,255,.18);transform:translateY(-50%) scale(1.1)}
+    .arr-btn.prev{left:20px}.arr-btn.next{right:20px}
+ 
+    .counter{position:absolute;top:26px;right:6%;z-index:30;display:flex;align-items:baseline;gap:5px;font-size:10px;font-weight:600;letter-spacing:.14em;color:rgba(255,255,255,.28)}
+    .counter .cur{font-family:'Playfair Display',serif;font-size:19px;color:#fff}
+ 
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px){
+      .slide-content{max-width:100%;padding:60px 5% 130px}
+      .product-panel{width:100%;position:relative;padding:20px 5% 30px;flex-direction:row;flex-wrap:wrap;justify-content:center}
+      .product-grid{max-width:100%;grid-template-columns:1fr 1fr;gap:10px}
+      .s1-overlay,.s2-overlay,.s3-overlay{background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.9) 58%,#000 100%)}
+      .slide-bg svg.illo{width:100%;opacity:0}
+      .slide.active .slide-bg svg.illo{opacity:.06}
+    }
+    @media(max-width:640px){
+      .product-panel{display:none}
+    }
+    @media(max-width:540px){.arr-btn{display:none}.pill{font-size:9px;padding:5px 11px}}
+    @media(prefers-reduced-motion:reduce){.slide,.sa,.slide-bg svg.illo,.product-panel,.ah-circle svg{transition:none;animation:none}}
+    /* Process Timeline */
+    .process-step {
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .process-step:hover {
+      transform: translateY(-8px);
+    }
+
+    .process-connector {
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, #7BB8D4 0%, transparent 100%);
+    }
+
+    .process-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #7BB8D4 0%, #1E2E6E 100%);
+      border-radius: 50%;
+      color: white;
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+
+    /* ── Product Cards ── */
+    .product-card {
+      border-radius: 24px;
+      overflow: hidden;
+      transition: all 0.35s ease;
+      box-shadow: 0 10px 30px rgba(30,46,110,0.08);
+      border: 1px solid rgba(123,184,212,0.1);
+      position: relative;
+      cursor: pointer;
+      background: white;
+    }
+
+    /* ── Image area ── */
+    .product-image-placeholder {
+      background: linear-gradient(135deg, #D6EAF3 0%, #eef7fb 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .product-image-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(123,184,212,0.25) 0%, transparent 70%);
+    }
+
+    /* ── "Tap/Hover to explore" hint badge — desktop only ── */
+    .product-hint {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(30,46,110,0.72);
+      color: #D6EAF3;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(123,184,212,0.3);
+      backdrop-filter: blur(6px);
+      transition: opacity 0.3s ease;
+      white-space: nowrap;
+    }
+
+    /* ══════════════════════════════════════
+       MOBILE  (< 768 px)
+       Cards are stacked full-width.
+       Image on top, info always visible below.
+    ══════════════════════════════════════ */
+    @media (max-width: 767px) {
+      .product-image-placeholder {
+        height: 200px;
+        font-size: 4rem;
+      }
+
+      /* Info sits below the image, always visible */
+      .product-info {
+        position: static;
+        opacity: 1 !important;
+        transform: none !important;
+        background: #1E2E6E;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product-info h3 { color: #ffffff; font-size: 1rem; margin-bottom: 6px; }
+      .product-info p  { color: #D6EAF3; font-size: 0.78rem; margin-bottom: 12px; }
+      .product-info h4 { color: #7BB8D4; font-size: 0.68rem; margin-bottom: 6px; }
+      .product-info li { color: rgba(255,255,255,0.85); font-size: 0.72rem; }
+      .product-info .specs-block { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.15); }
+      .product-info .apps-block  { margin-bottom: 0; }
+
+      /* Hide hint on mobile */
+      .product-hint { display: none; }
+
+      /* No lift effect on mobile */
+      .product-card:hover { transform: none; box-shadow: 0 10px 30px rgba(30,46,110,0.08); }
+    }
+
+    /* ══════════════════════════════════════
+       TABLET  (768 px – 1023 px)
+       Cards are 2-column.
+       Image fills the card, info overlays on hover/tap.
+    ══════════════════════════════════════ */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .product-image-placeholder { height: 300px; font-size: 5rem; }
+
+      .product-info {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(30,46,110,0.08) 0%,
+          rgba(30,46,110,0.90) 35%,
+          rgba(15,23,42,0.97) 100%
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 22px;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+        overflow-y: auto;
+      }
+
+      .product-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 50px rgba(30,46,110,0.20);
+        border-color: rgba(123,184,212,0.35);
+      }
+
+      .product-card:hover .product-info  { opacity: 1; transform: translateY(0); }
+      .product-card:hover .product-hint  { opacity: 0; pointer-events: none; }
+
+      .product-info h3 { color: #fff; font-size: 0.95rem; margin-bottom: 4px; }
+      .product-info p  { color: #D6EAF3; font-size: 0.72rem; margin-bottom: 10px; }
+      .product-info h4 { color: #7BB8D4; font-size: 0.65rem; margin-bottom: 4px; }
+      .product-info li { color: rgba(255,255,255,0.85); font-size: 0.7rem; }
+      .product-info .specs-block { margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.15); }
+      .product-info .apps-block  { margin-bottom: 0; }
+    }
+
+    /* ══════════════════════════════════════
+       DESKTOP  (≥ 1024 px)
+       Cards are 3-column.
+       Image fills the card, info overlays on hover.
+    ══════════════════════════════════════ */
+    @media (min-width: 1024px) {
+      .product-image-placeholder { height: 360px; font-size: 6rem; }
+
+      .product-info {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(30,46,110,0.08) 0%,
+          rgba(30,46,110,0.92) 38%,
+          rgba(15,23,42,0.98) 100%
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 28px;
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.38s ease, transform 0.38s ease;
+        overflow-y: auto;
+      }
+
+      .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 28px 64px rgba(30,46,110,0.24);
+        border-color: rgba(123,184,212,0.4);
+      }
+
+      .product-card:hover .product-info { opacity: 1; transform: translateY(0); }
+      .product-card:hover .product-hint { opacity: 0; pointer-events: none; }
+
+      .product-info h3 { color: #fff; font-size: 1.1rem; margin-bottom: 6px; }
+      .product-info p  { color: #D6EAF3; font-size: 0.8rem; margin-bottom: 14px; }
+      .product-info h4 { color: #7BB8D4; font-size: 0.7rem; margin-bottom: 6px; }
+      .product-info li { color: rgba(255,255,255,0.85); font-size: 0.75rem; }
+      .product-info .specs-block { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.18); }
+      .product-info .apps-block  { margin-bottom: 0; }
+    }
+
+    /* Scrollbar inside overlay */
+    .product-info::-webkit-scrollbar { width: 3px; }
+    .product-info::-webkit-scrollbar-thumb { background: rgba(123,184,212,0.5); border-radius: 4px; }
+
+    /* Raw Material Cards */
+    .material-card {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(30,46,110,0.06);
+      border: 1px solid rgba(123,184,212,0.12);
+      transition: all 0.3s ease;
+    }
+
+    .material-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(30,46,110,0.12);
+    }
+
+    .material-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #D6EAF3 0%, #eef7fb 100%);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 2.5rem;
+    }
+
+    /* Stats Section */
+    .stat-box {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(30,46,110,0.06);
+      border: 1px solid rgba(123,184,212,0.1);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, #7BB8D4 0%, #1E2E6E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Quality Badges */
+    .quality-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(123,184,212,0.1);
+      border: 1px solid rgba(123,184,212,0.3);
+      padding: 12px 20px;
+      border-radius: 12px;
+      color: #1E2E6E;
+      font-weight: 500;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .slide-in-right {
+      animation: slideInRight 0.6s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+    <nav id="navbar" class="site-nav fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-white border-b border-[#1E2E6E]/8 shadow-sm shadow-[#1E2E6E]/8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-[auto_1fr_auto] items-center h-20 gap-4 lg:gap-6">
+        <a href="#home" class="flex items-center gap-3 group justify-self-start -ml-2 sm:-ml-4 lg:-ml-6">
+          <div class="w-90 h-90 sm:w-90 sm:h-90 rounded-xl bg-white flex items-center justify-center overflow-hidden shadow-sm">
+            <img src="videos/raj_rayon_logo_transparent.png" alt="Brand logo" class="w-full h-full object-contain p-1" />
+          </div>
+        </a>
+
+        <div class="hidden lg:flex items-center justify-center gap-1">
+          <a href="home_.html" class="nav-link px-4 py-2 text-sm text-[#1E2E6E] hover:text-[#7BB8D4] transition-colors duration-300 rounded-lg hover:bg-[#D6EAF3]">Home</a>
+          <a href="infrastructure_.html" class="nav-link px-4 py-2 text-sm text-[#1E2E6E] hover:text-[#7BB8D4] transition-colors duration-300 rounded-lg hover:bg-[#D6EAF3]">Infrastructure</a>
+          <a href="products_.html" class="nav-link px-4 py-2 text-sm text-[#1E2E6E] hover:text-[#7BB8D4] transition-colors duration-300 rounded-lg hover:bg-[#D6EAF3]">Products</a>
+          <a href="investor.html" class="nav-link px-4 py-2 text-sm text-[#1E2E6E] hover:text-[#7BB8D4] transition-colors duration-300 rounded-lg hover:bg-[#D6EAF3]">Investor Relations</a>
+          <a href="career.html" class="nav-link px-4 py-2 text-sm text-[#1E2E6E] hover:text-[#7BB8D4] transition-colors duration-300 rounded-lg hover:bg-[#D6EAF3]">Careers</a>
+          <a href="contact.html" class="ml-4 px-5 py-2.5 bg-[#1E2E6E] text-white text-sm font-semibold rounded-lg hover:bg-[#17274f] transition-all duration-300 hover:shadow-lg hover:shadow-[#1E2E6E]/15">Contact Us</a>
+          <a href="https://www.svgfashions.com/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center  border-[#1E2E6E]/10 bg-white px-3 py-2 hover:bg-[#F4F7FB] transition-all duration-300 shadow-sm">
+            <img src="videos/SVG LOGO BMP.bmp" alt="SVG Logo" class="h-14 w-auto max-w-[120px] object-contain" />
+          </a>
+        </div>
+
+        <button id="menuBtn" class="lg:hidden justify-self-end text-[#1E2E6E] p-2 hover:bg-[#EEF7FB] rounded-lg transition-colors">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-navy-900/98 backdrop-blur-xl z-[60] p-8 flex flex-col">
+    <button id="closeMenu" class="self-end text-white/70 hover:text-white p-2 hover:bg-white/10 rounded-lg transition-colors mb-8">
+      <i data-lucide="x" class="w-6 h-6"></i>
+    </button>
+    <a href="#home" class="mobile-link text-lg text-white/80 hover:text-cream-400 py-3 border-b border-white/10 transition-colors">Home</a>
+    <a href="infrastructure_.html" class="mobile-link text-lg text-white/80 hover:text-cream-400 py-3 border-b border-white/10 transition-colors">Infrastructure</a>
+    <a href="products_.html" class="mobile-link text-lg text-white/80 hover:text-cream-400 py-3 border-b border-white/10 transition-colors">Products</a>
+    <a href="investor.html" class="mobile-link text-lg text-white/80 hover:text-cream-400 py-3 border-b border-white/10 transition-colors">Investor Relations</a>
+    <a href="career.html" class="mobile-link text-lg text-white/80 hover:text-cream-400 py-3 border-b border-white/10 transition-colors">Careers</a>
+    <a href="contact.html" class="mobile-link mt-6 px-5 py-3 bg-cream-400 text-navy-900 text-center font-semibold rounded-lg hover:bg-cream-300 transition-colors">Contact Us</a>
+  </div>
+  <div id="menuOverlay" class="fixed inset-0 bg-black/50 z-[55] hidden"></div>
+  <!--  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-white/95 backdrop-blur-md border-b border-[#1E2E6E]/8 shadow-sm shadow-[#1E2E6E]/8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20"> -->
+        <!-- Logo -->
+        <!--  <a href="home_.html" class="flex items-center gap-3 group -ml-3 sm:-ml-6 lg:-ml-8">
+          <div class="w-100 h-100 rounded-xl bg-white border-none shadow-none flex items-center justify-center overflow-hidden">
+            <img src="videos/raj_rayon_logo_transparent.png" alt="Brand logo" class="w-full h-full object-contain" />
+          </div>
+          <div class="hidden sm:block"></div>
+        </a> -->
+
+        <!-- Desktop Menu -->
+        <!-- <div class="hidden lg:flex items-center gap-1">
+          <a href="home_.html" class="nav-link px-4 py-2 text-sm text-[#1E2E6E] hover:text-[#7BB8D4] transition-colors duration-300 rounded-lg hover:bg-[#D6EAF3]">Home</a>
+          <a href="infrastructure_.html" class="nav-link px-4 py-2 text-sm text-[#1E2E6E] hover:text-[#7BB8D4] transition-colors duration-300 rounded-lg hover:bg-[#D6EAF3]">Infrastructure</a>
+          <a href="products_.html" class="nav-link px-4 py-2 text-sm text-[#7BB8D4] font-semibold transition-colors duration-300 rounded-lg bg-[#D6EAF3]">Products</a>
+          <a href="investor.html" class="nav-link px-4 py-2 text-sm text-[#1E2E6E] hover:text-[#7BB8D4] transition-colors duration-300 rounded-lg hover:bg-[#D6EAF3]">Investor Relations</a>
+          <a href="career.html" class="nav-link px-4 py-2 text-sm text-[#1E2E6E] hover:text-[#7BB8D4] transition-colors duration-300 rounded-lg hover:bg-[#D6EAF3]">Careers</a>
+          <a href="contact.html" class="ml-4 px-5 py-2.5 bg-[#1E2E6E] text-white text-sm font-semibold rounded-lg hover:bg-[#17274f] transition-all duration-300 hover:shadow-lg hover:shadow-[#1E2E6E]/15">Contact Us</a>
+          <a href="https://www.svgfashions.com/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-4 py-3 ml-3 hover:bg-white/10 transition-all duration-300">
+            <img src="videos/SVG LOGO BMP.bmp" alt="SVG Logo" class="h-16 w-auto object-contain" />
+          </a>
+        </div> -->
+
+        <!-- Mobile Menu Toggle -->
+        <!-- <button id="menuBtn" class="lg:hidden text-[#1E2E6E] p-2 hover:bg-[#EEF7FB] rounded-lg transition-colors">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+  </nav> --> 
+
+  <!-- Mobile Menu -->
+  <!-- <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-white z-[60] p-8 flex flex-col">
+    <button id="closeMenu" class="self-end text-[#1E2E6E] p-2 hover:bg-[#EEF7FB] rounded-lg transition-colors mb-8">
+      <i data-lucide="x" class="w-6 h-6"></i>
+    </button>
+    <a href="home_.html" class="mobile-link text-lg text-[#1E2E6E] hover:text-[#7BB8D4] py-3 border-b border-[#E5E7EB] transition-colors">Home</a>
+    <a href="infrastructure_.html" class="mobile-link text-lg text-[#1E2E6E] hover:text-[#7BB8D4] py-3 border-b border-[#E5E7EB] transition-colors">Infrastructure</a>
+    <a href="products_.html" class="mobile-link text-lg text-[#7BB8D4] font-semibold py-3 border-b border-[#E5E7EB] transition-colors flex items-center gap-2">
+      <i data-lucide="package" class="w-4 h-4"></i>Products
+    </a>
+    <a href="investor.html" class="mobile-link text-lg text-[#1E2E6E] hover:text-[#7BB8D4] py-3 border-b border-[#E5E7EB] transition-colors">Investor Relations</a>
+    <a href="career.html" class="mobile-link text-lg text-[#1E2E6E] hover:text-[#7BB8D4] py-3 border-b border-[#E5E7EB] transition-colors flex items-center gap-2">
+      <i data-lucide="briefcase" class="w-4 h-4"></i>Careers
+    </a>
+    <a href="contact.html" class="mobile-link mt-6 px-5 py-3 bg-[#1E2E6E] text-white text-center font-semibold rounded-lg hover:bg-[#17274f] transition-colors">Contact Us</a>
+  </div>
+  <div id="menuOverlay" class="fixed inset-0 bg-black/30 z-[55] hidden"></div> --> 
+
+  <!-- Main Content -->
+  <main class="pt-28 pb-16">
+    <!-- Hero Section -->
+     <section class="hero-slider" id="heroSlider">
+ 
+<!-- ════════════════════════════════════════
+     JOURNEY RIBBON
+════════════════════════════════════════ -->
+<div class="journey-ribbon" id="journeyRibbon">
+  <div class="jstep active" data-s="0" onclick="goTo(0)">
+    <div class="jstep-pill">
+      <span class="jstep-dot"></span>
+      Raj Rayon Yarns
+    </div>
+  </div>
+  <div class="jconnector"></div>
+  <div class="jstep" data-s="1" onclick="goTo(1)">
+    <div class="jstep-pill">
+      <span class="jstep-dot"></span>
+      SVG Fabrics
+    </div>
+  </div>
+  <div class="jconnector"></div>
+  <div class="jstep" data-s="2" onclick="goTo(2)">
+    <div class="jstep-pill">
+      <span class="jstep-dot"></span>
+      SVG Garments
+    </div>
+  </div>
+</div>
+ 
+<!-- ════════════════════════════════════════
+     SLIDE 1 — RAJ RAYON YARNS (navy / blue)
+════════════════════════════════════════ -->
+<div class="slide active">
+  <div class="s1-bg" style="position:absolute;inset:0"></div>
+  <div class="slide-bg">
+    <svg class="illo" viewBox="0 0 620 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- 3 yarn spools layered -->
+      <ellipse cx="320" cy="645" rx="195" ry="34" fill="#7BB8D4" opacity=".45"/>
+      <rect x="235" y="115" width="170" height="530" rx="85" fill="#1E2E6E" opacity=".88"/>
+      <ellipse cx="320" cy="115" rx="140" ry="42" fill="#7BB8D4" opacity=".88"/>
+      <ellipse cx="320" cy="645" rx="140" ry="42" fill="#7BB8D4" opacity=".88"/>
+      <path d="M320,130 Q445,225 320,335 Q195,445 320,535 Q445,615 320,640" stroke="#D6EAF3" stroke-width="4" fill="none" opacity=".55" stroke-dasharray="10 6"/>
+      <path d="M320,142 Q210,238 320,345 Q430,452 320,545 Q210,628 320,643" stroke="#7BB8D4" stroke-width="2.5" fill="none" opacity=".4" stroke-dasharray="8 8"/>
+      <!-- small spool left -->
+      <ellipse cx="95" cy="330" rx="68" ry="15" fill="#7BB8D4" opacity=".38"/>
+      <rect x="57" y="145" width="76" height="185" rx="38" fill="#1E2E6E" opacity=".72"/>
+      <ellipse cx="95" cy="145" rx="58" ry="18" fill="#7BB8D4" opacity=".72"/>
+      <ellipse cx="95" cy="330" rx="58" ry="18" fill="#7BB8D4" opacity=".72"/>
+      <path d="M95,158 Q138,202 95,248 Q52,294 95,322" stroke="#D6EAF3" stroke-width="2" fill="none" opacity=".5" stroke-dasharray="6 4"/>
+      <!-- small spool right -->
+      <ellipse cx="548" cy="462" rx="58" ry="14" fill="#7BB8D4" opacity=".32"/>
+      <rect x="513" y="308" width="70" height="154" rx="35" fill="#1E2E6E" opacity=".65"/>
+      <ellipse cx="548" cy="308" rx="52" ry="16" fill="#7BB8D4" opacity=".65"/>
+      <ellipse cx="548" cy="462" rx="52" ry="16" fill="#7BB8D4" opacity=".65"/>
+      <!-- threads shooting up -->
+      <path d="M455,205 Q520,145 582,65" stroke="#7BB8D4" stroke-width="2.5" fill="none" opacity=".5" stroke-dasharray="10 5"/>
+      <path d="M185,205 Q120,145 55,65" stroke="#D6EAF3" stroke-width="2" fill="none" opacity=".38" stroke-dasharray="8 6"/>
+      <circle cx="582" cy="65" r="6" fill="#7BB8D4" opacity=".55"/>
+      <circle cx="55" cy="65" r="5" fill="#D6EAF3" opacity=".42"/>
+      <text x="470" y="58" fill="#7BB8D4" font-size="12" opacity=".45" font-family="Inter,sans-serif">20D – 450D</text>
+    </svg>
+  </div>
+  <div class="slide-overlay s1-overlay"></div>
+
+  <!-- Yarn Types Panel — right side of Slide 1 -->
+  <div class="product-panel" style="gap:0;padding:72px 4% 100px 2%;">
+    <div class="panel-label" style="color:rgba(123,184,212,.65);margin-bottom:16px;font-size:10px;letter-spacing:.28em;">Our Yarn Portfolio</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%;max-width:480px;">
+
+      <!-- CHIPS -->
+      <div style="border-radius:14px;overflow:hidden;position:relative;border:1px solid rgba(123,184,212,.18);background:rgba(255,255,255,.04);transition:transform .25s,border-color .25s;cursor:default;">
+        <div style="width:100%;aspect-ratio:1/1;background:linear-gradient(135deg,rgba(30,46,110,.55) 0%,rgba(12,17,38,.8) 100%);display:flex;align-items:center;justify-content:center;padding:16px;">
+          <svg viewBox="0 0 120 120" width="90" height="90" xmlns="http://www.w3.org/2000/svg">
+            <!-- Chips: small spherical pellets arranged in a pile -->
+            <ellipse cx="60" cy="98" rx="50" ry="14" fill="rgba(123,184,212,.15)"/>
+            <!-- pellets bottom row -->
+            <circle cx="32" cy="88" r="11" fill="#D6EAF3" opacity=".82"/><circle cx="32" cy="88" r="11" fill="none" stroke="rgba(30,46,110,.3)" stroke-width="1"/>
+            <circle cx="54" cy="90" r="11" fill="#eef7fb" opacity=".85"/><circle cx="54" cy="90" r="11" fill="none" stroke="rgba(30,46,110,.25)" stroke-width="1"/>
+            <circle cx="76" cy="88" r="11" fill="#D6EAF3" opacity=".82"/><circle cx="76" cy="88" r="11" fill="none" stroke="rgba(30,46,110,.3)" stroke-width="1"/>
+            <!-- middle row -->
+            <circle cx="42" cy="70" r="11" fill="#eef7fb" opacity=".88"/><circle cx="42" cy="70" r="11" fill="none" stroke="rgba(30,46,110,.25)" stroke-width="1"/>
+            <circle cx="65" cy="72" r="11" fill="#D6EAF3" opacity=".85"/>
+            <circle cx="86" cy="70" r="11" fill="#eef7fb" opacity=".82"/>
+            <!-- top row -->
+            <circle cx="52" cy="53" r="11" fill="#D6EAF3" opacity=".9"/>
+            <circle cx="74" cy="55" r="10" fill="#eef7fb" opacity=".85"/>
+            <!-- highlight dots -->
+            <circle cx="48" cy="65" r="3" fill="white" opacity=".55"/>
+            <circle cx="70" cy="67" r="3" fill="white" opacity=".5"/>
+            <circle cx="30" cy="83" r="2.5" fill="white" opacity=".45"/>
+          </svg>
+        </div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 10px 10px;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,transparent 100%);text-align:center;">
+          <div style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;">CHIPS</div>
+          <div style="font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(123,184,212,.7);margin-top:2px;">By-Product</div>
+        </div>
+      </div>
+
+      <!-- POY -->
+      <div style="border-radius:14px;overflow:hidden;position:relative;border:1px solid rgba(123,184,212,.18);background:rgba(255,255,255,.04);transition:transform .25s,border-color .25s;cursor:default;">
+        <div style="width:100%;aspect-ratio:1/1;background:linear-gradient(135deg,rgba(30,46,110,.55) 0%,rgba(12,17,38,.8) 100%);display:flex;align-items:center;justify-content:center;padding:12px;">
+          <svg viewBox="0 0 120 140" width="76" height="90" xmlns="http://www.w3.org/2000/svg">
+            <!-- POY cone spool: tall, narrow top, wider base -->
+            <ellipse cx="60" cy="128" rx="38" ry="10" fill="rgba(123,184,212,.2)"/>
+            <!-- cone body -->
+            <path d="M36,118 L40,22 Q60,10 80,22 L84,118 Z" fill="rgba(214,234,243,.12)" stroke="rgba(123,184,212,.3)" stroke-width="1"/>
+            <rect x="38" y="22" width="44" height="96" rx="4" fill="rgba(214,234,243,.1)"/>
+            <!-- top cap -->
+            <ellipse cx="60" cy="22" rx="22" ry="7" fill="#D6EAF3" opacity=".75"/>
+            <!-- top hub cap (black) -->
+            <ellipse cx="60" cy="20" rx="8" ry="5" fill="#1a1a2e" opacity=".9"/>
+            <ellipse cx="60" cy="19" rx="5" ry="3" fill="#2d2d4a"/>
+            <!-- bottom cap -->
+            <ellipse cx="60" cy="118" rx="38" ry="10" fill="#D6EAF3" opacity=".75"/>
+            <!-- yarn wind lines -->
+            <path d="M38,40 Q60,34 82,40" stroke="rgba(255,255,255,.35)" stroke-width="1.2" fill="none"/>
+            <path d="M38,52 Q60,46 82,52" stroke="rgba(255,255,255,.3)" stroke-width="1.2" fill="none"/>
+            <path d="M38,64 Q60,58 82,64" stroke="rgba(255,255,255,.28)" stroke-width="1.2" fill="none"/>
+            <path d="M38,76 Q60,70 82,76" stroke="rgba(255,255,255,.25)" stroke-width="1.2" fill="none"/>
+            <path d="M38,88 Q60,82 82,88" stroke="rgba(255,255,255,.22)" stroke-width="1.2" fill="none"/>
+            <path d="M38,100 Q60,94 82,100" stroke="rgba(255,255,255,.2)" stroke-width="1.2" fill="none"/>
+            <!-- sheen -->
+            <ellipse cx="48" cy="65" rx="5" ry="28" fill="white" opacity=".07"/>
+          </svg>
+        </div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 10px 10px;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,transparent 100%);text-align:center;">
+          <div style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;">POY</div>
+          <div style="font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(123,184,212,.7);margin-top:2px;">Base Yarn</div>
+        </div>
+      </div>
+
+      <!-- DTY -->
+      <div style="border-radius:14px;overflow:hidden;position:relative;border:1px solid rgba(123,184,212,.18);background:rgba(255,255,255,.04);transition:transform .25s,border-color .25s;cursor:default;">
+        <div style="width:100%;aspect-ratio:1/1;background:linear-gradient(135deg,rgba(30,46,110,.55) 0%,rgba(12,17,38,.8) 100%);display:flex;align-items:center;justify-content:center;padding:12px;">
+          <svg viewBox="0 0 120 140" width="76" height="90" xmlns="http://www.w3.org/2000/svg">
+            <!-- DTY cone: same shape but cream/off-white tone, teal top ring -->
+            <ellipse cx="60" cy="128" rx="38" ry="10" fill="rgba(123,184,212,.18)"/>
+            <rect x="38" y="22" width="44" height="96" rx="4" fill="rgba(240,235,225,.12)"/>
+            <ellipse cx="60" cy="22" rx="22" ry="7" fill="#e8e0d0" opacity=".7"/>
+            <!-- teal top hub -->
+            <ellipse cx="60" cy="20" rx="8" ry="5" fill="#0d9488" opacity=".9"/>
+            <ellipse cx="60" cy="19" rx="5" ry="3" fill="#14b8a6"/>
+            <ellipse cx="60" cy="118" rx="38" ry="10" fill="#e8e0d0" opacity=".7"/>
+            <!-- yarn wind lines — slightly denser for textured DTY -->
+            <path d="M38,36 Q60,30 82,36" stroke="rgba(255,255,255,.3)" stroke-width="1.1" fill="none"/>
+            <path d="M38,46 Q60,40 82,46" stroke="rgba(255,255,255,.28)" stroke-width="1.1" fill="none"/>
+            <path d="M38,56 Q60,50 82,56" stroke="rgba(255,255,255,.26)" stroke-width="1.1" fill="none"/>
+            <path d="M38,66 Q60,60 82,66" stroke="rgba(255,255,255,.24)" stroke-width="1.1" fill="none"/>
+            <path d="M38,76 Q60,70 82,76" stroke="rgba(255,255,255,.22)" stroke-width="1.1" fill="none"/>
+            <path d="M38,86 Q60,80 82,86" stroke="rgba(255,255,255,.2)" stroke-width="1.1" fill="none"/>
+            <path d="M38,96 Q60,90 82,96" stroke="rgba(255,255,255,.18)" stroke-width="1.1" fill="none"/>
+            <path d="M38,106 Q60,100 82,106" stroke="rgba(255,255,255,.16)" stroke-width="1.1" fill="none"/>
+            <ellipse cx="48" cy="65" rx="5" ry="28" fill="white" opacity=".06"/>
+          </svg>
+        </div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 10px 10px;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,transparent 100%);text-align:center;">
+          <div style="font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;">DTY</div>
+          <div style="font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(123,184,212,.7);margin-top:2px;">Value Added</div>
+        </div>
+      </div>
+
+      <!-- Dope Dyed Yarns -->
+      <div style="border-radius:14px;overflow:hidden;position:relative;border:1px solid rgba(123,184,212,.18);background:rgba(255,255,255,.04);transition:transform .25s,border-color .25s;cursor:default;">
+        <div style="width:100%;aspect-ratio:1/1;background:linear-gradient(135deg,rgba(30,46,110,.55) 0%,rgba(12,17,38,.8) 100%);display:flex;align-items:center;justify-content:center;padding:12px;">
+          <svg viewBox="0 0 120 130" width="80" height="88" xmlns="http://www.w3.org/2000/svg">
+            <!-- Dope dyed: short squat bobbin/cheese shape, warm peach/tan color, pink center -->
+            <ellipse cx="60" cy="116" rx="44" ry="11" fill="rgba(200,140,100,.18)"/>
+            <!-- short wide cheese bobbin shape -->
+            <rect x="22" y="38" width="76" height="72" rx="6" fill="rgba(210,175,140,.13)"/>
+            <ellipse cx="60" cy="38" rx="38" ry="11" fill="#c8a07a" opacity=".72"/>
+            <ellipse cx="60" cy="110" rx="38" ry="11" fill="#c8a07a" opacity=".72"/>
+            <!-- side face taper hint -->
+            <rect x="24" y="38" width="72" height="72" rx="5" fill="rgba(200,165,130,.08)"/>
+            <!-- pink center tube -->
+            <ellipse cx="60" cy="74" rx="16" ry="16" fill="#be185d" opacity=".0"/>
+            <!-- hollow center hole -->
+            <ellipse cx="60" cy="38" rx="14" ry="4" fill="#1a1a2e" opacity=".85"/>
+            <ellipse cx="60" cy="110" rx="14" ry="4" fill="#1a1a2e" opacity=".85"/>
+            <!-- inner tube visible -->
+            <rect x="46" y="38" width="28" height="72" rx="3" fill="#be185d" opacity=".55"/>
+            <!-- yarn wind lines — warm -->
+            <path d="M24,55 Q60,48 96,55" stroke="rgba(255,255,255,.22)" stroke-width="1.2" fill="none"/>
+            <path d="M24,67 Q60,60 96,67" stroke="rgba(255,255,255,.2)" stroke-width="1.2" fill="none"/>
+            <path d="M24,79 Q60,72 96,79" stroke="rgba(255,255,255,.18)" stroke-width="1.2" fill="none"/>
+            <path d="M24,91 Q60,84 96,91" stroke="rgba(255,255,255,.15)" stroke-width="1.2" fill="none"/>
+            <!-- sheen -->
+            <ellipse cx="35" cy="74" rx="5" ry="28" fill="white" opacity=".06"/>
+          </svg>
+        </div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:28px 10px 10px;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,transparent 100%);text-align:center;">
+          <div style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#fff;line-height:1.2;">Dope Dyed<br>Yarns</div>
+          <div style="font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(123,184,212,.7);margin-top:2px;">Value Added</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="slide-content">
+    <div class="eyebrow sa sa1">
+      <span class="etag etag-blue">Our Products</span>
+      <span class="enum">01 / 03</span>
+    </div>
+    <div class="sub sub-blue sa sa2">Raj Rayon Industries</div>
+    <h2 class="title sa sa3">Premium<br>Polyester Yarns</h2>
+    <p class="desc desc-blue sa sa4">The foundation of every fabric and garment that SVG Fashions creates. We manufacture four types of world-class polyester yarn — the raw ingredient powering the entire textile value chain.</p>
+    <div class="pill-row sa sa4">
+      <span class="pill pill-blue">PTY · Textured</span>
+      <span class="pill pill-blue">POY · Partially Oriented</span>
+      <span class="pill pill-blue">FDY · Fully Drawn</span>
+      <span class="pill pill-blue">DDY · Doped Dyed</span>
+    </div>
+    <div class="specs sa sa5">
+      <div class="sc"><span class="lbl lbl-blue">Denier Range</span><span class="val">20D – 450D</span></div>
+      <div class="sc"><span class="lbl lbl-blue">Listed</span><span class="val">BSE &amp; NSE</span></div>
+      <div class="sc"><span class="lbl lbl-blue">Quality Rate</span><span class="val">99.2%</span></div>
+    </div>
+    <div class="arrow-hint sa sa5" id="ah1" role="button" tabindex="0">
+      <span class="ah-text">See what our yarns become</span>
+      <span class="ah-circle ah-blue">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#7BB8D4" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </div>
+    <div class="actions sa sa6">
+      <a href="#products" class="btn btn-blue">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        Explore Yarns
+      </a>
+      <a href="contact.html" class="btn-ghost">Enquire Now</a>
+    </div>
+  </div>
+</div>
+ 
+<!-- ════════════════════════════════════════
+     SLIDE 2 — SVG FABRICS (crimson / red)
+════════════════════════════════════════ -->
+<div class="slide">
+  <div class="s2-bg" style="position:absolute;inset:0"></div>
+  <div class="slide-bg">
+    <svg class="illo" viewBox="0 0 620 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M110,0 C175,85 90,210 155,340 C220,470 130,590 195,700 L425,700 C490,590 400,470 465,340 C530,210 445,85 510,0Z" fill="#7f1d1d" opacity=".55"/>
+      <path d="M210,0 C255,95 195,210 230,340 C265,470 205,590 240,700 L300,700 C275,590 315,470 290,340 C265,210 305,95 275,0Z" fill="#fff" opacity=".06"/>
+      <line x1="80" y1="70"  x2="540" y2="70"  stroke="#fff" stroke-width="1.3" opacity=".08"/>
+      <line x1="80" y1="140" x2="540" y2="140" stroke="#fff" stroke-width="1.3" opacity=".08"/>
+      <line x1="80" y1="210" x2="540" y2="210" stroke="#fff" stroke-width="1.3" opacity=".08"/>
+      <line x1="80" y1="280" x2="540" y2="280" stroke="#fff" stroke-width="1.3" opacity=".08"/>
+      <line x1="80" y1="350" x2="540" y2="350" stroke="#fff" stroke-width="1.3" opacity=".08"/>
+      <line x1="80" y1="420" x2="540" y2="420" stroke="#fff" stroke-width="1.3" opacity=".08"/>
+      <line x1="80" y1="490" x2="540" y2="490" stroke="#fff" stroke-width="1.3" opacity=".08"/>
+      <line x1="80" y1="560" x2="540" y2="560" stroke="#fff" stroke-width="1.3" opacity=".08"/>
+      <line x1="80" y1="630" x2="540" y2="630" stroke="#fff" stroke-width="1.3" opacity=".08"/>
+      <line x1="155" y1="0" x2="155" y2="700" stroke="#fff" stroke-width="1" opacity=".06"/>
+      <line x1="230" y1="0" x2="230" y2="700" stroke="#fff" stroke-width="1" opacity=".06"/>
+      <line x1="310" y1="0" x2="310" y2="700" stroke="#fff" stroke-width="1" opacity=".06"/>
+      <line x1="385" y1="0" x2="385" y2="700" stroke="#fff" stroke-width="1" opacity=".06"/>
+      <line x1="460" y1="0" x2="460" y2="700" stroke="#fff" stroke-width="1" opacity=".06"/>
+      <path d="M300,230 L360,310 L300,390 L240,310 Z" stroke="#fca5a5" stroke-width="2.2" fill="none" opacity=".4"/>
+      <circle cx="300" cy="310" r="7" fill="#fca5a5" opacity=".45"/>
+      <path d="M530,90 Q590,45 595,5" stroke="#fca5a5" stroke-width="3" fill="none" opacity=".5" stroke-dasharray="10 5"/>
+      <circle cx="595" cy="5" r="7" fill="#fca5a5" opacity=".5"/>
+    </svg>
+  </div>
+  <div class="slide-overlay s2-overlay"></div>
+ 
+  <!-- product grid panel -->
+  <div class="product-panel">
+    <div class="panel-label" style="color:rgba(252,165,165,.6)">From Raj Rayon yarn · SVG Fabrics</div>
+    <div class="product-grid">
+      <a href="https://www.svgfashions.com/products/recycled-poly-spandex-knitted-mesh-jacquards/" target="_blank" class="prod-card">
+        <img src="https://www.svgfashions.com/wp-content/uploads/2021/08/Recycled-Poly-Spandex-Knitted-Mesh-Jacquards.png" alt="Mesh Jacquards" loading="lazy"/>
+        <div class="card-label">Mesh Jacquards</div>
+      </a>
+      <a href="https://www.svgfashions.com/products/poly-spandex-jacquards/" target="_blank" class="prod-card">
+        <img src="https://www.svgfashions.com/wp-content/uploads/2021/08/Poly-Spandex-Jacquards.png" alt="Poly Spandex Jacquards" loading="lazy"/>
+        <div class="card-label">Poly Spandex Jacquards</div>
+      </a>
+      <a href="https://www.svgfashions.com/products/poly-viscose-blended-duplex-brasso/" target="_blank" class="prod-card">
+        <img src="https://www.svgfashions.com/wp-content/uploads/2021/08/Poly-Viscose-Blended-Duplex-Brasso.png" alt="Duplex Brasso" loading="lazy"/>
+        <div class="card-label">Duplex Brasso</div>
+      </a>
+      <a href="https://www.svgfashions.com/our-products/fabrics/" target="_blank" class="prod-more">
+        <span class="more-icon">+</span>
+        <span class="more-text">View All Fabrics</span>
+      </a>
+    </div>
+  </div>
+ 
+  <div class="slide-content">
+    <div class="logo-badge sa sa1">
+      <img src="https://www.svgfashions.com/wp-content/uploads/2021/09/svg-logo-1.png" alt="SVG Fashions" onerror="this.style.display='none'"/>
+      <div class="lb-text"><strong>SVG Fashions</strong>Shree Venkatshwar Group</div>
+    </div>
+    <div class="provenance-tag sa sa1">
+      <div class="prov-icon" style="background:rgba(123,184,212,.2)">🧵</div>
+      <span class="prov-text">Made from <strong>Raj Rayon Polyester Yarn</strong></span>
+    </div>
+    <div class="eyebrow sa sa2">
+      <span class="etag etag-red">Knitted &amp; Woven Fabrics</span>
+      <span class="enum">02 / 03</span>
+    </div>
+    <div class="sub sub-red sa sa2">Yarn → Fabric</div>
+    <h2 class="title sa sa3">SVG Fabric<br>Collections</h2>
+    <p class="desc desc-red sa sa4">From our looms come Knitted &amp; Woven fabrics in every permutation — Poly-Spandex Jacquards, Mesh Fabrics, Metallic Jacquards, Embroidered, Poly-Tencel and more. All born from Raj Rayon yarn.</p>
+    <div class="pill-row sa sa4">
+      <span class="pill pill-red">Poly-Spandex Jacquards</span>
+      <span class="pill pill-red">Mesh Jacquards</span>
+      <span class="pill pill-red">Poly Tencel</span>
+      <span class="pill pill-red">Duplex Brasso</span>
+      <span class="pill pill-red">Embroidered</span>
+    </div>
+    <div class="arrow-hint sa sa5" id="ah2" role="button" tabindex="0">
+      <span class="ah-text">See the finished garments</span>
+      <span class="ah-circle ah-red">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </div>
+    <div class="actions sa sa6">
+      <a href="https://www.svgfashions.com/our-products/fabrics/" target="_blank" rel="noopener" class="btn btn-red">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Explore SVG Fabrics
+      </a>
+      <a href="contact.html" class="btn-ghost">Enquire Now</a>
+    </div>
+  </div>
+</div>
+ 
+<!-- ════════════════════════════════════════
+     SLIDE 3 — SVG GARMENTS (emerald / green)
+════════════════════════════════════════ -->
+<div class="slide">
+  <div class="s3-bg" style="position:absolute;inset:0"></div>
+  <div class="slide-bg">
+    <svg class="illo" viewBox="0 0 620 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- T-shirt silhouette -->
+      <path d="M200,60 L120,180 L200,200 L200,580 L420,580 L420,200 L500,180 L420,60 L360,100 C340,130 300,140 260,100 Z" fill="#064e3b" opacity=".7"/>
+      <!-- collar -->
+      <path d="M260,100 Q300,155 340,100" stroke="#34d399" stroke-width="3" fill="none" opacity=".6"/>
+      <!-- stitching lines -->
+      <path d="M200,200 L200,580" stroke="#6ee7b7" stroke-width="1.5" fill="none" opacity=".3" stroke-dasharray="6 5"/>
+      <path d="M420,200 L420,580" stroke="#6ee7b7" stroke-width="1.5" fill="none" opacity=".3" stroke-dasharray="6 5"/>
+      <path d="M200,340 L420,340" stroke="#6ee7b7" stroke-width="1" fill="none" opacity=".2" stroke-dasharray="5 5"/>
+      <!-- fabric texture on shirt -->
+      <line x1="205" y1="230" x2="415" y2="230" stroke="#fff" stroke-width=".8" opacity=".08"/>
+      <line x1="205" y1="270" x2="415" y2="270" stroke="#fff" stroke-width=".8" opacity=".08"/>
+      <line x1="205" y1="310" x2="415" y2="310" stroke="#fff" stroke-width=".8" opacity=".08"/>
+      <line x1="205" y1="390" x2="415" y2="390" stroke="#fff" stroke-width=".8" opacity=".08"/>
+      <line x1="205" y1="430" x2="415" y2="430" stroke="#fff" stroke-width=".8" opacity=".08"/>
+      <line x1="205" y1="470" x2="415" y2="470" stroke="#fff" stroke-width=".8" opacity=".08"/>
+      <line x1="205" y1="510" x2="415" y2="510" stroke="#fff" stroke-width=".8" opacity=".08"/>
+      <line x1="205" y1="550" x2="415" y2="550" stroke="#fff" stroke-width=".8" opacity=".08"/>
+      <!-- value chain hint: yarn → fabric → garment -->
+      <text x="80" y="620" fill="#34d399" font-size="10" opacity=".4" font-family="Inter,sans-serif">Yarn  →  Fabric  →  Garment</text>
+      <!-- sleeve seam details -->
+      <path d="M120,180 L200,200" stroke="#6ee7b7" stroke-width="1.5" fill="none" opacity=".35"/>
+      <path d="M500,180 L420,200" stroke="#6ee7b7" stroke-width="1.5" fill="none" opacity=".35"/>
+    </svg>
+  </div>
+  <div class="slide-overlay s3-overlay"></div>
+ 
+  <!-- product grid panel -->
+  <div class="product-panel">
+    <div class="panel-label" style="color:rgba(110,231,183,.6)">From Raj Rayon yarn · SVG Garments</div>
+    <div class="product-grid">
+      <a href="https://www.svgfashions.com/products/gym-wear-plastisol-printed-tees-2/" target="_blank" class="prod-card">
+        <img src="https://www.svgfashions.com/wp-content/uploads/2021/09/Gym-Wear_Plastisol-Printed-Tees-1.png" alt="Gym Wear Tees" loading="lazy"/>
+        <div class="card-label">Gym Wear Tees</div>
+      </a>
+      <a href="https://www.svgfashions.com/products/athleisure-jackets/" target="_blank" class="prod-card">
+        <img src="https://www.svgfashions.com/wp-content/uploads/2021/09/Athleisure_Jackets-1.png" alt="Athleisure Jackets" loading="lazy"/>
+        <div class="card-label">Athleisure Jackets</div>
+      </a>
+      <a href="https://www.svgfashions.com/products/athleisure-hoodies-tights/" target="_blank" class="prod-card">
+        <img src="https://www.svgfashions.com/wp-content/uploads/2021/08/Athleisure-Hoodies-Tights.jpg" alt="Hoodies & Tights" loading="lazy"/>
+        <div class="card-label">Hoodies &amp; Tights</div>
+      </a>
+      <a href="https://www.svgfashions.com/our-products/garments/" target="_blank" class="prod-more">
+        <span class="more-icon">+</span>
+        <span class="more-text">View All Garments</span>
+      </a>
+    </div>
+  </div>
+ 
+  <div class="slide-content">
+    <div class="logo-badge sa sa1">
+      <img src="https://www.svgfashions.com/wp-content/uploads/2021/09/svg-logo-1.png" alt="SVG Fashions" onerror="this.style.display='none'"/>
+      <div class="lb-text"><strong style="color:#6ee7b7">SVG Fashions</strong>Shree Venkatshwar Group</div>
+    </div>
+    <div class="provenance-tag sa sa1">
+      <div class="prov-icon" style="background:rgba(52,211,153,.18)">🧵</div>
+      <span class="prov-text">Made from <strong>Raj Rayon Polyester Yarn</strong></span>
+    </div>
+    <div class="eyebrow sa sa2">
+      <span class="etag etag-green">Sportswear &amp; Athleisure</span>
+      <span class="enum">03 / 03</span>
+    </div>
+    <div class="sub sub-green sa sa2">Yarn → Fabric → Garment</div>
+    <h2 class="title sa sa3">SVG Garment<br>Collections</h2>
+    <p class="desc desc-green sa sa4">The complete value chain — from our yarn, SVG crafts world-class Gym Wear, Athleisure Jackets, Hoodies, Crop Tops, Zipper Tees and more. Polyester expertise from fibre to fashion.</p>
+    <div class="pill-row sa sa4">
+      <span class="pill pill-green">Gym Wear</span>
+      <span class="pill pill-green">Athleisure Jackets</span>
+      <span class="pill pill-green">Hoodies &amp; Tights</span>
+      <span class="pill pill-green">Crop Tops</span>
+      <span class="pill pill-green">Zipper Tees</span>
+    </div>
+    <div class="actions sa sa6">
+      <a href="https://www.svgfashions.com/our-products/garments/" target="_blank" rel="noopener" class="btn btn-green">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Explore SVG Garments
+      </a>
+      <a href="contact.html" class="btn-ghost">Enquire Now</a>
+    </div>
+  </div>
+</div>
+ 
+<!-- arrows -->
+<button class="arr-btn prev" id="prevBtn" aria-label="Previous">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+</button>
+<button class="arr-btn next" id="nextBtn" aria-label="Next">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+</button>
+ 
+<!-- counter -->
+<div class="counter">
+  <span class="cur" id="curNum">01</span><span>/ 03</span>
+</div>
+ 
+<!-- thumbnail row -->
+<div class="thumb-row">
+  <div class="thumb-item t-blue" data-idx="0">
+    <div class="tprog tp-blue" id="prog-0"></div>
+    <div class="tlabel">01 — Yarns</div>
+    <div class="tname">Raj Rayon Polyester Yarns</div>
+    <div class="tsub">PTY · POY · FDY · DDY</div>
+  </div>
+  <div class="thumb-item" data-idx="1">
+    <div class="tprog tp-red" id="prog-1"></div>
+    <div class="tlabel">02 — Fabrics</div>
+    <div class="tname">SVG Fabric Collections</div>
+    <div class="tsub">Knitted &amp; Woven · 30+ types</div>
+  </div>
+  <div class="thumb-item" data-idx="2">
+    <div class="tprog tp-green" id="prog-2"></div>
+    <div class="tlabel">03 — Garments</div>
+    <div class="tname">SVG Garment Collections</div>
+    <div class="tsub">Sportswear · Athleisure</div>
+  </div>
+</div>
+     </section>
+    <!-- <section class="hero-gradient py-16 md:py-24 relative">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <div class="inline-block mb-6 px-4 py-2 rounded-full bg-[#7BB8D4]/15 border border-[#7BB8D4]/30">
+            <p class="text-[#7BB8D4] text-sm font-semibold uppercase tracking-[0.4em]">Our Products</p>
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Premium Polyester Yarns & Fibers</h1>
+          <p class="text-lg text-[#D6EAF3] max-w-2xl mx-auto mb-8">From advanced raw materials to world-class finished products, discover our comprehensive range of polyester textured yarns, POY, and FDY manufactured with cutting-edge technology.</p>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a href="infrastructure.html#process" class="px-6 py-3 bg-[#7BB8D4] text-[#1E2E6E] font-semibold rounded-lg hover:bg-white transition-all duration-300">Explore Process</a>
+            <a href="#products" class="px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-300">Our Products</a>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Raw Materials Section -->
+    <section id="premium-inputs" class="py-20 px-4 sm:px-6 lg:px-8 bg-[#F4F7FB]">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-[#7BB8D4] text-sm font-semibold uppercase tracking-[0.4em] mb-3">Premium Inputs</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1E2E6E]">Raw Materials & Inputs</h2>
+          <p class="text-[#4B5563] mt-4 max-w-2xl mx-auto">We source only the finest raw materials to ensure superior quality in every production cycle.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Material 1 -->
+          <div class="material-card fade-in-up">
+            <div class="material-icon">🛢️</div>
+            <h3 class="text-lg font-semibold text-[#1E2E6E] mb-2">Polyester Chips</h3>
+            <p class="text-[#4B5563] text-sm mb-4">High-quality polyester polymer chips sourced from premium suppliers. Virgin and recycled options available for sustainable production.</p>
+            <ul class="text-xs text-[#4B5563] space-y-1">
+              <li>✓ ISO 9001 Certified</li>
+              <li>✓ High Purity Grade</li>
+              <li>✓ Consistent Quality</li>
+            </ul>
+          </div>
+
+          <!-- Material 2 -->
+          <div class="material-card fade-in-up" style="animation-delay: 0.1s;">
+            <div class="material-icon">🔬</div>
+            <h3 class="text-lg font-semibold text-[#1E2E6E] mb-2">Catalysts & Additives</h3>
+            <p class="text-[#4B5563] text-sm mb-4">Specialized chemical catalysts and additives for polymerization and yarn processing. Improves dyeability and performance characteristics.</p>
+            <ul class="text-xs text-[#4B5563] space-y-1">
+              <li>✓ Imported Quality</li>
+              <li>✓ Custom Blends</li>
+              <li>✓ Performance Enhanced</li>
+            </ul>
+          </div>
+
+          <!-- Material 3 -->
+          <div class="material-card fade-in-up" style="animation-delay: 0.2s;">
+            <div class="material-icon">💨</div>
+            <h3 class="text-lg font-semibold text-[#1E2E6E] mb-2">Process Gases</h3>
+            <p class="text-[#4B5563] text-sm mb-4">Industrial nitrogen and other specialty gases for controlled polymerization and fiber production environment.</p>
+            <ul class="text-xs text-[#4B5563] space-y-1">
+              <li>✓ Food Grade Standards</li>
+              <li>✓ High Purity 99.9%</li>
+              <li>✓ Continuous Supply</li>
+            </ul>
+          </div>
+
+          <!-- Material 4 -->
+          <div class="material-card fade-in-up" style="animation-delay: 0.3s;">
+            <div class="material-icon">🧪</div>
+            <h3 class="text-lg font-semibold text-[#1E2E6E] mb-2">Dyes & Chemicals</h3>
+            <p class="text-[#4B5563] text-sm mb-4">Premium textile dyes and chemical treatments for superior color fastness and yarn characteristics.</p>
+            <ul class="text-xs text-[#4B5563] space-y-1">
+              <li>✓ AATCC Compliant</li>
+              <li>✓ Wide Color Range</li>
+              <li>✓ Eco-friendly Options</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manufacturing Process Section
+    <!-- <section id="process" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-[#7BB8D4] text-sm font-semibold uppercase tracking-[0.4em] mb-3">Production Excellence</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1E2E6E]">From Chips to Yarns: Our Process</h2>
+          <p class="text-[#4B5563] mt-4 max-w-2xl mx-auto">A comprehensive 7-step manufacturing process ensuring quality at every stage.</p>
+        </div> -->
+
+        <!-- Process Timeline -->
+        <!-- <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+           Step 1
+          <div class="process-step">
+            <div class="bg-white rounded-2xl p-8 border-2 border-[#D6EAF3] hover:border-[#7BB8D4] transition-colors h-full">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="process-number">1</div>
+                <h3 class="text-lg font-bold text-[#1E2E6E]">Chip Selection</h3>
+              </div>
+              <div class="text-4xl mb-4">🛢️</div>
+              <p class="text-[#4B5563] text-sm mb-4">Premium polyester chips are selected and quality-checked. Raw materials undergo rigorous testing for purity, viscosity, and consistency.</p>
+              <div class="pt-4 border-t border-[#D6EAF3] text-xs text-[#7BB8D4] font-semibold">Quality Check: ✓</div>
+            </div>
+          </div> -->
+
+          <!-- Step 2 -->
+          <!-- <div class="process-step" style="animation-delay: 0.1s;">
+            <div class="bg-white rounded-2xl p-8 border-2 border-[#D6EAF3] hover:border-[#7BB8D4] transition-colors h-full">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="process-number">2</div>
+                <h3 class="text-lg font-bold text-[#1E2E6E]">Polymer Mixing</h3>
+              </div>
+              <div class="text-4xl mb-4">🔄</div>
+              <p class="text-[#4B5563] text-sm mb-4">Chips are melted and mixed with catalysts and additives. Advanced mixers ensure uniform distribution of all components.</p>
+              <div class="pt-4 border-t border-[#D6EAF3] text-xs text-[#7BB8D4] font-semibold">Temp: 280-290°C</div>
+            </div>
+          </div> -->
+
+          <!-- Step 3 -->
+          <!-- <div class="process-step" style="animation-delay: 0.2s;">
+            <div class="bg-white rounded-2xl p-8 border-2 border-[#D6EAF3] hover:border-[#7BB8D4] transition-colors h-full">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="process-number">3</div>
+                <h3 class="text-lg font-bold text-[#1E2E6E]">Polymerization</h3>
+              </div>
+              <div class="text-4xl mb-4">⚡</div>
+              <p class="text-[#4B5563] text-sm mb-4">Controlled chemical reactions create polymer chains. Precise temperature and pressure control ensures optimal molecular weight.</p>
+              <div class="pt-4 border-t border-[#D6EAF3] text-xs text-[#7BB8D4] font-semibold">Duration: 2-4 Hours</div>
+            </div>
+          </div> -->
+
+          <!-- Step 4 -->
+          <!-- <div class="process-step" style="animation-delay: 0.3s;">
+            <div class="bg-white rounded-2xl p-8 border-2 border-[#D6EAF3] hover:border-[#7BB8D4] transition-colors h-full">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="process-number">4</div>
+                <h3 class="text-lg font-bold text-[#1E2E6E]">Extrusion</h3>
+              </div>
+              <div class="text-4xl mb-4">🌀</div>
+              <p class="text-[#4B5563] text-sm mb-4">Molten polymer is extruded through spinnerets creating continuous filaments. Precision spinnerets create consistent fiber diameter.</p>
+              <div class="pt-4 border-t border-[#D6EAF3] text-xs text-[#7BB8D4] font-semibold">Speed: 3000+ m/min</div>
+            </div>
+          </div> -->
+
+          <!-- Step 5 -->
+          <!-- <div class="process-step" style="animation-delay: 0.4s;">
+            <div class="bg-white rounded-2xl p-8 border-2 border-[#D6EAF3] hover:border-[#7BB8D4] transition-colors h-full">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="process-number">5</div>
+                <h3 class="text-lg font-bold text-[#1E2E6E]">Drawing & Texturing</h3>
+              </div>
+              <div class="text-4xl mb-4">🎯</div>
+              <p class="text-[#4B5563] text-sm mb-4">Filaments are drawn to increase strength and then textured to create bulk and elasticity. Creates unique crimp structure.</p>
+              <div class="pt-4 border-t border-[#D6EAF3] text-xs text-[#7BB8D4] font-semibold">Stretch: 4.5x</div>
+            </div>
+          </div> -->
+
+          <!-- Step 6 -->
+          <!-- <div class="process-step" style="animation-delay: 0.5s;">
+            <div class="bg-white rounded-2xl p-8 border-2 border-[#D6EAF3] hover:border-[#7BB8D4] transition-colors h-full">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="process-number">6</div>
+                <h3 class="text-lg font-bold text-[#1E2E6E]">Heat Setting</h3>
+              </div>
+              <div class="text-4xl mb-4">🔥</div>
+              <p class="text-[#4B5563] text-sm mb-4">Yarns are heat-set to stabilize the crimp and fiber structure. Ensures dimensional stability and shrink resistance.</p>
+              <div class="pt-4 border-t border-[#D6EAF3] text-xs text-[#7BB8D4] font-semibold">Temp: 190-220°C</div>
+            </div>
+          </div> -->
+
+          <!-- Step 7 -->
+          <!-- <div class="process-step" style="animation-delay: 0.6s;">
+            <div class="bg-white rounded-2xl p-8 border-2 border-[#D6EAF3] hover:border-[#7BB8D4] transition-colors h-full">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="process-number">7</div>
+                <h3 class="text-lg font-bold text-[#1E2E6E]">Winding & Testing</h3>
+              </div>
+              <div class="text-4xl mb-4">📦</div>
+              <p class="text-[#4B5563] text-sm mb-4">Finished yarns are wound on cones and tested for all specifications. Quality control ensures every batch meets standards.</p>
+              <div class="pt-4 border-t border-[#D6EAF3] text-xs text-[#7BB8D4] font-semibold">100% Testing</div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Process Visualization -->
+        <div class="bg-gradient-to-r from-[#D6EAF3] to-[#eef7fb] rounded-2xl p-8 md:p-12">
+          <div class="flex items-center justify-between text-center md:text-left">
+            <div>
+              <h3 class="text-2xl font-bold text-[#1E2E6E] mb-2">Advanced Manufacturing</h3>
+              <p class="text-[#4B5563]">Complete control over every parameter ensures consistent quality and optimal performance.</p>
+            </div>
+            <div class="hidden md:flex items-center gap-4 ml-8">
+              <div class="text-right">
+                <p class="text-3xl font-bold text-[#7BB8D4]">99.2%</p>
+                <p class="text-sm text-[#4B5563]">Quality Rate</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 px-4 sm:px-6 lg:px-8 bg-[#F4F7FB]">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-[#7BB8D4] text-sm font-semibold uppercase tracking-[0.4em] mb-3">Product Range</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1E2E6E]">Our Products</h2>
+          <p class="text-[#4B5563] mt-4 max-w-2xl mx-auto">A complete range of polyester yarns designed for various textile applications worldwide.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- PTY Product -->
+          <div class="product-card">
+            <div class="product-image-placeholder">
+              <img src="Z:\dhwani rril\RRIL INDUSTRIES LIMITED - 123\RRIL INDUSTRIES LIMITED - Copy\WhatsApp Image 2026-06-26 at 18.51.52.jpeg" alt="Partially Oriented Yarn (POY)">
+              <span class="product-hint">Polyester Textured Yarn (PTY)</span>
+            </div>
+            <div class="product-info">
+              <h3 class="font-bold">Polyester Textured Yarn (PTY)</h3>
+              <p>Crimped polyester yarn with excellent bulk, elasticity, and comfort — ideal for hosiery and knitwear.</p>
+              <div class="specs-block">
+                <h4 class="uppercase tracking-widest font-semibold">Specifications</h4>
+                <ul class="space-y-1">
+                  <li><span class="font-semibold text-white">Denier Range:</span> 20D to 300D</li>
+                  <li><span class="font-semibold text-white">Tenacity:</span> 4.5–5.5 g/d</li>
+                  <li><span class="font-semibold text-white">Elongation:</span> 20–25%</li>
+                  <li><span class="font-semibold text-white">Shrinkage:</span> &lt; 3%</li>
+                </ul>
+              </div>
+              <div class="apps-block">
+                <h4 class="uppercase tracking-widest font-semibold">Applications</h4>
+                <ul class="space-y-1">
+                  <li>✓ Hosiery</li>
+                  <li>✓ Knitwear</li>
+                  <li>✓ Upholstery</li>
+                  <li>✓ Sports Apparel</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- POY Product -->
+          <div class="product-card">
+            <div class="product-image-placeholder">
+          <img src="Z:\dhwani rril\RRIL INDUSTRIES LIMITED - 123\YARN 2.png" alt="Partially Oriented Yarn (POY)">
+<span class="product-hint">Partially Oriented Yarn (POY)</span>
+            </div>
+            <div class="product-info">
+              <h3 class="font-bold">Partially Oriented Yarn (POY)</h3>
+              <p>Semi-crystalline yarn used as feed for texturing and false twist operations. Superior processing characteristics.</p>
+              <div class="specs-block">
+                <h4 class="uppercase tracking-widest font-semibold">Specifications</h4>
+                <ul class="space-y-1">
+                  <li><span class="font-semibold text-white">Denier Range:</span> 50D to 450D</li>
+                  <li><span class="font-semibold text-white">Tenacity:</span> 1.2–1.5 g/d</li>
+                  <li><span class="font-semibold text-white">Birefringence:</span> 0.055–0.065</li>
+                  <li><span class="font-semibold text-white">Melt Index:</span> Consistent</li>
+                </ul>
+              </div>
+              <div class="apps-block">
+                <h4 class="uppercase tracking-widest font-semibold">Applications</h4>
+                <ul class="space-y-1">
+                  <li>✓ Texturing Feed</li>
+                  <li>✓ False Twist</li>
+                  <li>✓ Industrial Fabrics</li>
+                  <li>✓ Carpet Yarn</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- FDY Product -->
+          <div class="product-card">
+            <div class="product-image-placeholder">
+              <img src="Z:\dhwani rril\RRIL INDUSTRIES LIMITED - 123\YARN 3.jpeg">
+              <span class="product-hint">Fully Drawn Yarn (FDY)</span>
+            </div>
+            <div class="product-info">
+              <h3 class="font-bold">Fully Drawn Yarn (FDY)</h3>
+              <p>High-tenacity yarn ready for direct use in weaving and knitting. Excellent dyeability and performance.</p>
+              <div class="specs-block">
+                <h4 class="uppercase tracking-widest font-semibold">Specifications</h4>
+                <ul class="space-y-1">
+                  <li><span class="font-semibold text-white">Denier Range:</span> 30D to 300D</li>
+                  <li><span class="font-semibold text-white">Tenacity:</span> 4.2–5.0 g/d</li>
+                  <li><span class="font-semibold text-white">Elongation:</span> 15–20%</li>
+                  <li><span class="font-semibold text-white">Luster:</span> Semi/Dull</li>
+                </ul>
+              </div>
+              <div class="apps-block">
+                <h4 class="uppercase tracking-widest font-semibold">Applications</h4>
+                <ul class="space-y-1">
+                  <li>✓ Woven Fabrics</li>
+                  <li>✓ Knitted Wear</li>
+                  <li>✓ Premium Textiles</li>
+                  <li>✓ Technical Textiles</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- DDY Product -->
+          <div class="product-card">
+            <div class="product-image-placeholder">
+              <img src="Z:\dhwani rril\RRIL INDUSTRIES LIMITED - 123\YARN 4.jpeg">
+              <span class="product-hint">Doped Dyed Yarn (DDY)</span>
+            </div>
+            <div class="product-info">
+              <h3 class="font-bold">Doped Dyed Yarn (DDY)</h3>
+              <p>Solution dyed polyester yarn produced by adding pigments during the polymer stage, providing excellent colour fastness, durability, and uniform shade throughout the fibre.</p>
+              <div class="specs-block">
+                <h4 class="uppercase tracking-widest font-semibold">Specifications</h4>
+                <ul class="space-y-1">
+                  <li><span class="font-semibold text-white">Denier Range:</span> 20D to 300D</li>
+                  <li><span class="font-semibold text-white">Tenacity:</span> 4.0–6.0 g/d</li>
+                  <li><span class="font-semibold text-white">Elongation:</span> 20–30%</li>
+                  <li><span class="font-semibold text-white">Shrinkage:</span> &lt; 3%</li>
+                </ul>
+              </div>
+              <div class="apps-block">
+                <h4 class="uppercase tracking-widest font-semibold">Applications</h4>
+                <ul class="space-y-1">
+                  <li>✓ Sportswear</li>
+                  <li>✓ Activewear</li>
+                  <li>✓ Hosiery</li>
+                  <li>✓ Home Textiles</li>
+                  <li>✓ Upholstery</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Single centred CTA below all cards -->
+        <div class="mt-12 flex justify-center">
+          <a href="contact.html"
+             class="inline-flex items-center gap-3 px-10 py-4 bg-[#1E2E6E] text-white font-semibold text-base rounded-xl shadow-lg shadow-[#1E2E6E]/20 hover:bg-[#17274f] hover:shadow-xl hover:shadow-[#1E2E6E]/30 transition-all duration-300">
+            <i data-lucide="mail" class="w-5 h-5"></i>
+            Inquire Now
+          </a>
+        </div>
+
+    <!-- Quality & Certifications -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <p class="text-[#7BB8D4] text-sm font-semibold uppercase tracking-[0.4em] mb-3">Quality Assurance</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1E2E6E]">Certifications & Quality Standards</h2>
+          <p class="text-[#4B5563] mt-4 max-w-2xl mx-auto">We maintain the highest standards of quality through continuous testing and international certifications.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div class="stat-box">
+            <div class="text-3xl mb-4">🏆</div>
+            <p class="text-[#4B5563] font-semibold mb-2">ISO 9001:2015</p>
+            <p class="text-xs text-[#4B5563]">Quality Management System</p>
+          </div>
+          <div class="stat-box">
+            <div class="text-3xl mb-4">✅</div>
+            <p class="text-[#4B5563] font-semibold mb-2">OEKO-TEX®</p>
+            <p class="text-xs text-[#4B5563]">Chemical Safety Certified</p>
+          </div>
+          <div class="stat-box">
+            <div class="text-3xl mb-4">🌍</div>
+            <p class="text-[#4B5563] font-semibold mb-2">GRS Certified</p>
+            <p class="text-xs text-[#4B5563]">Global Recycled Standard</p>
+          </div>
+          <div class="stat-box">
+            <div class="text-3xl mb-4">💚</div>
+            <p class="text-[#4B5563] font-semibold mb-2">Eco-Friendly</p>
+            <p class="text-xs text-[#4B5563]">Sustainable Production</p>
+          </div>
+        </div>
+
+        <!-- Quality Parameters -->
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-[#F4F7FB] rounded-2xl p-8 border border-[#D6EAF3]">
+            <h3 class="text-xl font-bold text-[#1E2E6E] mb-6">Quality Testing Parameters</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#7BB8D4] flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <p class="font-semibold text-[#1E2E6E]">Tenacity Testing</p>
+                  <p class="text-xs text-[#4B5563]">Ensures yarn strength meets specifications</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#7BB8D4] flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <p class="font-semibold text-[#1E2E6E]">Elongation Analysis</p>
+                  <p class="text-xs text-[#4B5563]">Verifies elastic properties and flexibility</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#7BB8D4] flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <p class="font-semibold text-[#1E2E6E]">Denier Uniformity</p>
+                  <p class="text-xs text-[#4B5563]">Ensures consistent fiber diameter</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check-circle-2" class="w-5 h-5 text-[#7BB8D4] flex-shrink-0 mt-0.5"></i>
+                <div>
+                  <p class="font-semibold text-[#1E2E6E]">Shrinkage Testing</p>
+                  <p class="text-xs text-[#4B5563]">Confirms dimensional stability</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-[#F4F7FB] rounded-2xl p-8 border border-[#D6EAF3]">
+            <h3 class="text-xl font-bold text-[#1E2E6E] mb-6">Quality Metrics</h3>
+            <div class="space-y-6">
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="text-sm font-semibold text-[#1E2E6E]">Consistency Rate</span>
+                  <span class="text-sm font-bold text-[#7BB8D4]">99.5%</span>
+                </div>
+                <div class="h-2 bg-[#D6EAF3] rounded-full overflow-hidden">
+                  <div class="h-full bg-[#7BB8D4]" style="width: 99.5%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="text-sm font-semibold text-[#1E2E6E]">Defect-Free Production</span>
+                  <span class="text-sm font-bold text-[#7BB8D4]">99.2%</span>
+                </div>
+                <div class="h-2 bg-[#D6EAF3] rounded-full overflow-hidden">
+                  <div class="h-full bg-[#7BB8D4]" style="width: 99.2%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="text-sm font-semibold text-[#1E2E6E]">On-Time Delivery</span>
+                  <span class="text-sm font-bold text-[#7BB8D4]">98.8%</span>
+                </div>
+                <div class="h-2 bg-[#D6EAF3] rounded-full overflow-hidden">
+                  <div class="h-full bg-[#7BB8D4]" style="width: 98.8%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span class="text-sm font-semibold text-[#1E2E6E]">Customer Satisfaction</span>
+                  <span class="text-sm font-bold text-[#7BB8D4]">99.8%</span>
+                </div>
+                <div class="h-2 bg-[#D6EAF3] rounded-full overflow-hidden">
+                  <div class="h-full bg-[#7BB8D4]" style="width: 99.8%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#1E2E6E] to-[#0f172a]">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Experience Quality?</h2>
+        <p class="text-[#D6EAF3] mb-8">Contact our sales team to discuss your specific requirements and get customized solutions.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="contact.html" class="px-8 py-3 bg-[#7BB8D4] text-[#1E2E6E] font-semibold rounded-lg hover:bg-white transition-all duration-300">Get in Touch</a>
+          <a href="infrastructure_.html" class="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-300">Learn More</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="relative bg-navy-950 pt-20 pb-8 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 bg-cream-400 rounded-lg flex items-center justify-center">
+              <span class="text-navy-900 font-display font-bold text-lg">RR</span>
+            </div>
+            <div>
+              <span class="text-white font-display text-xl font-semibold">Raj Rayon</span>
+              <span class="block text-cream-400/70 text-[10px] uppercase tracking-[0.2em] -mt-0.5">Industries Limited</span>
+            </div>
+          </div>
+          <p class="text-white/50 leading-relaxed max-w-md mb-6">A BSE & NSE listed company engaged in manufacturing of Polyester Texturised Yarn (PTY), Partially Oriented Yarn (POY), & Fully Drawn Yarn (FDY) since 1993.</p>
+          <div class="flex gap-3">
+            <a href="#" class="w-10 h-10 bg-white/5 hover:bg-cream-400/20 rounded-lg flex items-center justify-center transition-colors duration-300">
+              <i data-lucide="linkedin" class="w-4 h-4 text-white/60 hover:text-cream-400"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/5 hover:bg-cream-400/20 rounded-lg flex items-center justify-center transition-colors duration-300">
+              <i data-lucide="mail" class="w-4 h-4 text-white/60 hover:text-cream-400"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-white/5 hover:bg-cream-400/20 rounded-lg flex items-center justify-center transition-colors duration-300">
+              <i data-lucide="phone" class="w-4 h-4 text-white/60 hover:text-cream-400"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm uppercase tracking-widest mb-6">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="home_.html" class="text-white/50 hover:text-cream-400 transition-colors text-sm flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Home</a></li>
+            <li><a href="infrastructure_.html" class="text-white/50 hover:text-cream-400 transition-colors text-sm flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Infrastructure</a></li>
+            <li><a href="products_.html" class="text-white/50 hover:text-cream-400 transition-colors text-sm flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Products</a></li>
+            <li><a href="investor.html" class="text-white/50 hover:text-cream-400 transition-colors text-sm flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Investor Relations</a></li>
+            <li><a href="career.html" class="text-white/50 hover:text-cream-400 transition-colors text-sm flex items-center gap-2"><i data-lucide="chevron-right" class="w-3 h-3"></i>Careers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold text-sm uppercase tracking-widest mb-6">Contact</h4>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-4 h-4 text-cream-400 mt-1 flex-shrink-0"></i>
+              <p class="text-white/50 text-sm">Survey No. 177/1/3 & 177/1/4,Silvassa, Union Territory of Dadra & Nagar Haveli, India</p>
+            </div>
+            <div class="flex items-start gap-3">
+              <i data-lucide="map-pin" class="w-4 h-4 mt-1 flex-shrink-0" style="color:#7BB8D4"></i>
+              <p class="text-sm" style="color:rgba(255,255,255,.5)">Agarwal Golden Chamber, 2nd & 3rd Floor,
+Off. New Link Road, A-13,Veera Desai Indl. Estate,
+Andheri (West), Mumbai- 400 053, Maharashtra, India.</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <i data-lucide="mail" class="w-4 h-4 text-cream-400 flex-shrink-0"></i>
+              <a href="mailto:info@rajrayon.com" class="text-white/50 text-sm hover:text-cream-400 transition-colors">info@rajrayon.com</a>
+            </div>
+            <div class="flex items-center gap-3">
+              <i data-lucide="phone" class="w-4 h-4 text-cream-400 flex-shrink-0"></i>
+              <a href="tel:+91-22- 4250 9700" class="text-white/50 text-sm hover:text-cream-400 transition-colors">+91-22- 4250 9700</a>
+              
+        </div>
+         <div class="flex items-center gap-3">
+              <i data-lucide="phone" class="w-4 h-4 text-cream-400 flex-shrink-0"></i>
+              <a href="tel:+91-9879504195" class="text-white/50 text-sm hover:text-cream-400 transition-colors">+91-9879504195</a>
+              
+        </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-white/5 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-white/30 text-xs">© 2024 Raj Rayon Industries Limited. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="text-white/30 hover:text-cream-400 text-xs transition-colors">Privacy Policy</a>
+          <a href="#" class="text-white/30 hover:text-cream-400 text-xs transition-colors">Terms of Service</a>
+          <a href="#" class="text-white/30 hover:text-cream-400 text-xs transition-colors">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const DURATION = 7000;
+  const slides  = document.querySelectorAll('.slide');
+  const thumbs  = document.querySelectorAll('.thumb-item');
+  const jsteps  = document.querySelectorAll('.jstep');
+  const curNum  = document.getElementById('curNum');
+  const activeCls = ['t-blue','t-red','t-green'];
+  let current=0, raf=null, timer=null, t0=null;
+ 
+  function goTo(idx){
+    stopAnim();
+    slides[current].classList.remove('active');
+    thumbs[current].classList.remove(activeCls[current]);
+    jsteps[current].classList.remove('active');
+    current=(idx+3)%3;
+    slides[current].classList.add('active');
+    thumbs[current].classList.add(activeCls[current]);
+    jsteps[current].classList.add('active');
+    curNum.textContent=['01','02','03'][current];
+    startAnim();
+    clearTimeout(timer);
+    timer=setTimeout(()=>goTo(current+1),DURATION);
+  }
+ 
+  function startAnim(){
+    const bar=document.getElementById('prog-'+current);
+    bar.style.width='0%';
+    t0=performance.now();
+    function tick(now){
+      const p=Math.min(((now-t0)/DURATION)*100,100);
+      bar.style.width=p+'%';
+      if(p<100) raf=requestAnimationFrame(tick);
+    }
+    raf=requestAnimationFrame(tick);
+  }
+ 
+  function stopAnim(){
+    if(raf) cancelAnimationFrame(raf);
+    document.querySelectorAll('.tprog').forEach(b=>b.style.width='0%');
+  }
+ 
+  document.getElementById('prevBtn').onclick=()=>goTo(current-1);
+  document.getElementById('nextBtn').onclick=()=>goTo(current+1);
+  thumbs.forEach(t=>t.addEventListener('click',()=>goTo(+t.dataset.idx)));
+ 
+  document.getElementById('ah1').addEventListener('click',()=>goTo(1));
+  document.getElementById('ah1').addEventListener('keydown',e=>{if(e.key==='Enter')goTo(1)});
+  document.getElementById('ah2').addEventListener('click',()=>goTo(2));
+  document.getElementById('ah2').addEventListener('keydown',e=>{if(e.key==='Enter')goTo(2)});
+ 
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowLeft') goTo(current-1);
+    if(e.key==='ArrowRight') goTo(current+1);
+  });
+ 
+  const slider=document.getElementById('heroSlider');
+  slider.addEventListener('mouseenter',()=>{clearTimeout(timer);if(raf)cancelAnimationFrame(raf)});
+  slider.addEventListener('mouseleave',()=>{startAnim();timer=setTimeout(()=>goTo(current+1),DURATION)});
+ 
+  let tx=0;
+  slider.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+  slider.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-tx;
+    if(Math.abs(dx)>50) dx<0?goTo(current+1):goTo(current-1);
+  },{passive:true});
+ 
+  startAnim();
+  timer=setTimeout(()=>goTo(1),DURATION);
+    lucide.createIcons();
+    const menuBtn = document.getElementById('menuBtn');
+    const closeMenuBtn = document.getElementById('closeMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    
+    function openMenu() {
+      mobileMenu.classList.add('open');
+      menuOverlay.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      menuOverlay.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+    
+    menuBtn.addEventListener('click', openMenu);
+    closeMenuBtn.addEventListener('click', closeMenu);
+    menuOverlay.addEventListener('click', closeMenu);
+    mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+    // Navigation scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 10) {
+        navbar.classList.add('nav-scrolled');
+      } else {
+        navbar.classList.remove('nav-scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
